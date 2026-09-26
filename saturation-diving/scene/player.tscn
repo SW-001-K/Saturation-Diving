@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://daw02eaa2big8"]
+
+[ext_resource type="Script" uid="uid://e3y4m0ryyeo" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://bytgnghra4k70" path="res://scripts/camera_3d.gd" id="2_dqkch"]
+[ext_resource type="Script" uid="uid://dxtw2n4indxai" path="res://scripts/reticle.gd" id="3_qhqgy"]
+[ext_resource type="LabelSettings" uid="uid://bbhom6f5485fl" path="res://resources/plaintext.tres" id="4_dqkch"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u8vuu"]
+radius = 0.375
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_uly5j"]
+radius = 0.375
+height = 0.75
+
+[node name="Player" type="CharacterBody3D" unique_id=969582840 node_paths=PackedStringArray("stand_collider", "crouch_collider")]
+collision_mask = 9
+script = ExtResource("1_3vyb7")
+stand_collider = NodePath("standing")
+crouch_collider = NodePath("crouch")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=526472348]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+cull_mask = 524287
+fov = 66.0
+near = 0.058
+far = 1000.0
+script = ExtResource("2_dqkch")
+
+[node name="Interaction" type="RayCast3D" parent="Camera3D" unique_id=837174333]
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 10
+
+[node name="standing" type="CollisionShape3D" parent="." unique_id=255527642 groups=["player"]]
+shape = SubResource("CapsuleShape3D_u8vuu")
+
+[node name="crouch" type="CollisionShape3D" parent="." unique_id=1761368319 groups=["player"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.375, 0)
+shape = SubResource("CapsuleShape3D_uly5j")
+
+[node name="UI" type="Control" parent="." unique_id=798406995]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="reticle" type="CenterContainer" parent="UI" unique_id=1424585341 node_paths=PackedStringArray("raycast")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_qhqgy")
+raycast = NodePath("../../Camera3D/Interaction")
+
+[node name="prompt" type="Label" parent="UI/reticle" unique_id=1666303618]
+visible = false
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Prompt
+[Key]"
+horizontal_alignment = 1
+
+[node name="R" type="Label" parent="UI" unique_id=844341982]
+texture_filter = 1
+layout_mode = 0
+offset_left = 11.0
+offset_right = 1920.0
+offset_bottom = 402.0
+text = "WASD for movement
+Ctrl for crouch
+Shift for sprinting
+
+1 - Teleport to start
+2 - Load Gym
+
+Press H to hide or show this"
+label_settings = ExtResource("4_dqkch")
+vertical_alignment = 1
+
+[connection signal="state_change" from="." to="Camera3D" method="_on_player_state_change"]

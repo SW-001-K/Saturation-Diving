@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cgb18bquwoaaa"]
+
+[ext_resource type="PackedScene" uid="uid://bi00ycifixraq" path="res://assets/3D/PLACEHOLDERFLOOR.blend" id="1_itxqv"]
+[ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="2_v0l8b"]
+
+[sub_resource type="Environment" id="Environment_83xmj"]
+ssao_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_albedo = Color(0.08200996, 0.2850324, 0.36087182, 1)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ff24q"]
+
+[sub_resource type="Compositor" id="Compositor_ps1l2"]
+
+[node name="Node3D" type="Node3D" unique_id=1597984316]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=918976540]
+environment = SubResource("Environment_83xmj")
+camera_attributes = SubResource("CameraAttributesPractical_ff24q")
+compositor = SubResource("Compositor_ps1l2")
+
+[node name="PLACEHOLDERFLOOR" parent="." unique_id=644889040 instance=ExtResource("1_itxqv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.484149, -2.184763, -2.4712656)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1608129238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.371645, 0)
+light_color = Color(0, 0.8959685, 0.8990491, 1)
+light_energy = 7.706
+light_volumetric_fog_energy = 1.075
+light_angular_distance = 3.45
+
+[node name="CharacterBody3D" parent="." unique_id=2127073738 instance=ExtResource("2_v0l8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5001726, 0)
