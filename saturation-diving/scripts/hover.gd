@@ -10,7 +10,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func Enter():
-	diver.motion_mode = CharacterBody3D.MOTION_MODE_GROUNDED
+	#diver.motion_mode = CharacterBody3D.MOTION_MODE_GROUNDED
 	print("I am hovering")
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,8 +18,10 @@ func Physics_Update(delta: float):
 	diver.move_and_slide()
 
 	#Add the gravity.
-	if not diver.is_on_floor():
-		diver.velocity += diver.get_gravity() * delta
+	#if not diver.is_on_floor():
+		#diver.velocity += diver.get_gravity() * delta
+		
+	
 
 	## Handle jump.
 	#if Input.is_action_just_pressed("ui_accept") and diver.is_on_floor():

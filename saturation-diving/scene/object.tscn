@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dq24dqojw5ymq"]
+
+[ext_resource type="Script" uid="uid://dwsrd1iq6krjs" path="res://scripts/interactable.gd" id="1_8pbu7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xigk5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xigk5"]
+
+[node name="Item" type="StaticBody3D" unique_id=295776542]
+collision_layer = 2
+collision_mask = 15
+script = ExtResource("1_8pbu7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1091424125]
+mesh = SubResource("BoxMesh_xigk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1767737496]
+shape = SubResource("BoxShape3D_xigk5")

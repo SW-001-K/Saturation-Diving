@@ -8,6 +8,7 @@ var dot_radius : float = 2.0
 var ring_radius : float = 0.0
 
 
+
 func _ready() -> void:
 	queue_redraw()
 

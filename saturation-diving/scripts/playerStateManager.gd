@@ -35,9 +35,13 @@ func receiveSignal(signalName):
 	#
 	elif currentState == getNodeNames("jump") && not diver.is_on_floor():
 		getNodeNames("jump").Change_State("fall")
-	
-	elif currentState == getNodeNames("fall") && diver.is_on_floor():
-		getNodeNames("fall").Change_State("hover")
+		
+	elif currentState == getNodeNames("fall"):
+		if signalName == "jump":
+			getNodeNames("fall").Change_State("swim")
+		
+		elif diver.is_on_floor():
+			getNodeNames("fall").Change_State("hover")
 		
 	elif signalName == "null" && currentState == getNodeNames("moving"):
 		getNodeNames("moving").Change_State("hover")
@@ -48,8 +52,13 @@ func receiveSignal(signalName):
 	elif currentState == getNodeNames("moving"):
 		if signalName == "jump":
 			currentState.Change_State("jump")
+
+	Global.debug.addDebugProperty("State", currentState, 1)
+
 		
-	
+
+
+		
 			
 	
 			

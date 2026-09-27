@@ -39,9 +39,3 @@ func Change_State(Target):
 	transitioned.emit(self,Target)
 	
 	pass
-
-func buttonPress(button):
-	if Input.is_action_just_pressed("change state"):
-		Press.emit(button)
-		
-	pass

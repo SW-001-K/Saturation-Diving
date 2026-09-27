@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://u66n2imbnyl"]
+
+[ext_resource type="Script" uid="uid://bkhh35kj0aohc" path="res://scene/interactionDebug.gd" id="1_v4x7y"]
+
+[node name="Control" type="Control" unique_id=802342564]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_v4x7y")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1837824097]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.224
+anchor_right = 1.0
+anchor_bottom = 0.224
+offset_left = 737.0
+offset_top = -85.15201
+offset_right = -21.0
+offset_bottom = -58.152008
+pivot_offset = Vector2(200, 0)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1284109191]
+layout_mode = 2

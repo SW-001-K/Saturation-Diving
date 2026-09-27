@@ -1,5 +1,6 @@
 extends state
 class_name playerMapper
+#don't mind this one, this is me failing 
 
 @export var stateMachine : stateMachine
 @export var hover : state

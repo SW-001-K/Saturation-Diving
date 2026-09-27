@@ -6,10 +6,12 @@ func Enter():
 func Physics_Update(delta: float):
 	if not diver.is_on_floor():
 		diver.velocity += diver.get_gravity() * delta
+		
 	var input_dir := Input.get_vector("left", "right", "forward", "back")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 
 	direction = direction.rotated(Vector3.UP, %Camera3D.global_rotation.y)
+	
 	if direction:
 		diver.velocity.x = direction.x * SPEED
 		diver.velocity.z = direction.z * SPEED

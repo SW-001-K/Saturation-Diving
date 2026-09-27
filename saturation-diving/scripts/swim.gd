@@ -13,7 +13,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func Enter():
-	diver.motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
+	#diver.motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
 	print("I am swimming")
 
 

@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://dadwkruq8ta3p" path="res://scripts/swimming.gd" id="5_we03v"]
 [ext_resource type="Script" uid="uid://bj2tpu4aqttyr" path="res://scripts/moving.gd" id="7_pwk5y"]
 [ext_resource type="Script" uid="uid://dspjycitmkoxl" path="res://scripts/jump.gd" id="8_37r0l"]
-[ext_resource type="Script" uid="uid://cag8kpvy8a5p8" path="res://fall.gd" id="9_u54p1"]
+[ext_resource type="Script" uid="uid://cag8kpvy8a5p8" path="res://scripts/fall.gd" id="9_u54p1"]
+[ext_resource type="Script" uid="uid://dxtw2n4indxai" path="res://scripts/reticle.gd" id="10_hu34d"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xigk5"]
 
@@ -16,12 +17,17 @@
 points = PackedVector3Array(-0.12520654, -0.532801, -0.4805069, 0.022783129, 0.4760704, 0.49888408, 0.16971254, 0.5591441, 0.46417162, 0.23105091, -0.8035912, 0.32045516, 0.40741014, 0.651043, -0.24352328, -0.4827893, 0.59484255, 0.082213186, -0.3628679, -0.68231165, 0.2896967, 0.46904355, -0.65452886, -0.06627126, -0.12744367, 0.8427015, -0.33810276, -0.39343542, -0.6839421, -0.24471663, 0.43825462, 0.62330925, 0.20084947, 0.0841477, 0.977454, 0.11479468, -0.06820232, -0.9764576, -0.12927033, 0.20054972, -0.56312895, -0.4514544, -0.18552664, 0.59545326, -0.4534751, -0.27336287, 0.59226835, 0.40775412, -0.0069364863, -0.47682306, 0.49966025, 0.37582088, -0.5886136, 0.31695515, 0.111579016, 0.5630594, -0.48117727, -0.41725034, 0.5278656, -0.27049688, -0.48454633, -0.59697217, -0.06650971, -0.27974695, 0.90856135, 0.05333608, -0.25019687, -0.8807117, 0.20531891, 0.263647, -0.90277094, -0.1273943, 0.29336792, 0.8715263, -0.15719566, 0.3734115, -0.5263189, -0.32824618, 0.4996626, 0.47664148, -0.0068885577, 0.053105574, 0.8750009, 0.32470253, -0.15454252, -0.5908538, 0.4658794, -0.09727988, -0.7823577, -0.39818847, -0.3876489, -0.49817133, 0.31564978, -0.30067965, -0.58799505, -0.38890144)
 
 [node name="Diver" type="CharacterBody3D" unique_id=2127073738]
+collision_mask = 15
 script = ExtResource("1_j4ui4")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1859835930]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.87955165, -0.104772806)
 script = ExtResource("2_mueib")
+
+[node name="Interaction" type="RayCast3D" parent="Camera3D" unique_id=859904336]
+target_position = Vector3(0, 0, -1.5)
+collision_mask = 10
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1132363836]
 mesh = SubResource("CapsuleMesh_xigk5")
@@ -61,3 +67,35 @@ metadata/_custom_type_script = "uid://dspjycitmkoxl"
 script = ExtResource("9_u54p1")
 diver = NodePath("../..")
 metadata/_custom_type_script = "uid://dspjycitmkoxl"
+
+[node name="UI" type="Control" parent="." unique_id=495083636]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="reticle" type="CenterContainer" parent="UI" unique_id=2108654023 node_paths=PackedStringArray("raycast")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(50, 40)
+script = ExtResource("10_hu34d")
+raycast = NodePath("../../Camera3D/Interaction")
+
+[node name="prompt" type="Label" parent="UI/reticle" unique_id=1558811121]
+layout_mode = 2
+offset_transform_pivot_ratio = Vector2(5, 1)
+theme_override_font_sizes/font_size = 30
+text = "Prompt
+[Key]"
+horizontal_alignment = 1

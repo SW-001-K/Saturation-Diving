@@ -6,7 +6,7 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func Enter():
-	diver.motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
+	#diver.motion_mode = CharacterBody3D.MOTION_MODE_FLOATING
 	print("I am swimming while moving")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -14,11 +14,11 @@ func Physics_Update(delta: float):
 	
 
 	# Add the gravity.
-	if not diver.is_on_floor():
-		diver.velocity += diver.get_gravity() * delta
+	#if not diver.is_on_floor():
+		#diver.velocity += diver.get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and diver.is_on_floor():
+	if Input.is_action_just_pressed("ui_accept"):
 		diver.velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
