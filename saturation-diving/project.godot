@@ -29,6 +29,10 @@ window/stretch/aspect="expand"
 
 project/assembly_name="Saturation Diving"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/flight_navigation_3d/plugin.cfg")
+
 [input]
 
 forward={

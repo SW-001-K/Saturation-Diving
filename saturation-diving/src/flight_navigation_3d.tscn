@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://ckxcpysd56k6x"]
+
+[ext_resource type="Script" uid="uid://bgycj2fx171sy" path="res://src/flight_navigation_3d.gd" id="1_28b6r"]
+[ext_resource type="Script" uid="uid://nhlfq4j56miw" path="res://src/svo.gd" id="2_2h38c"]
+[ext_resource type="Script" uid="uid://bulfru8exdq1l" path="res://src/greedy_a_star.gd" id="3_fwyfk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u4dg3"]
+transparency = 1
+shading_mode = 2
+specular_mode = 2
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.0980392)
+
+[sub_resource type="Resource" id="Resource_ff24q"]
+script = ExtResource("2_2h38c")
+metadata/_custom_type_script = "uid://nhlfq4j56miw"
+
+[sub_resource type="Resource" id="Resource_83xmj"]
+script = ExtResource("3_fwyfk")
+metadata/_custom_type_script = "uid://bulfru8exdq1l"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3o65"]
+transparency = 1
+albedo_color = Color(0, 1, 0, 0.196078)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2h38c"]
+albedo_color = Color(1, 1, 1, 0.039215688)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u4dg3"]
+material = SubResource("StandardMaterial3D_2h38c")
+size = Vector3(0.01171875, 0.01171875, 0.01171875)
+
+[sub_resource type="MultiMesh" id="MultiMesh_e3o65"]
+transform_format = 1
+mesh = SubResource("BoxMesh_u4dg3")
+
+[node name="FlightNavigation3D" type="CSGBox3D" unique_id=1815466678]
+calculate_tangents = false
+material = SubResource("StandardMaterial3D_u4dg3")
+script = ExtResource("1_28b6r")
+sparse_voxel_octree = SubResource("Resource_ff24q")
+pathfinder = SubResource("Resource_83xmj")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=587346393]
+visible = false
+material_override = SubResource("StandardMaterial3D_e3o65")
+
+[node name="SVOLinkCubes" type="Node3D" parent="." unique_id=506086343]
+
+[node name="DebugDraw" type="Node3D" parent="." unique_id=414581776]
+
+[node name="Voxel" type="MultiMeshInstance3D" parent="DebugDraw" unique_id=1303528774]
+multimesh = SubResource("MultiMesh_e3o65")
+
+[node name="SVONode" type="Node3D" parent="DebugDraw" unique_id=297126428]

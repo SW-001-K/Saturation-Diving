@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_wp4xf"]
 [ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="4_brvut"]
 [ext_resource type="PackedScene" uid="uid://u66n2imbnyl" path="res://scene/interactionDebug.tscn" id="6_4j5ol"]
+[ext_resource type="PackedScene" uid="uid://b0g0ern44x710" path="res://scene/OxygenBar.tscn" id="7_p1hux"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
@@ -51,3 +52,6 @@ objectName = "box 2"
 mouse_filter = 2
 
 [node name="Control" parent="." unique_id=802342564 instance=ExtResource("6_4j5ol")]
+
+[node name="Oxygen Bar" parent="." unique_id=901570163 instance=ExtResource("7_p1hux")]
+mouse_filter = 2

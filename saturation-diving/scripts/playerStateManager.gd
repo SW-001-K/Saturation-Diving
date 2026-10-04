@@ -52,7 +52,7 @@ func receiveSignal(signalName):
 	elif currentState == getNodeNames("moving"):
 		if signalName == "jump":
 			currentState.Change_State("jump")
-
+#
 	Global.debug.addDebugProperty("State", currentState, 1)
 
 		
