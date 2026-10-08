@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="4_brvut"]
 [ext_resource type="PackedScene" uid="uid://u66n2imbnyl" path="res://scene/interactionDebug.tscn" id="6_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://b0g0ern44x710" path="res://scene/OxygenBar.tscn" id="7_p1hux"]
+[ext_resource type="PackedScene" uid="uid://xyjj4swdj4q3" path="res://assets/3D/testship.blend" id="8_of57s"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.1
+volumetric_fog_density = 0.2
 volumetric_fog_albedo = Color(0.08200996, 0.2850324, 0.36087182, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ff24q"]
@@ -26,8 +27,12 @@ points = PackedVector3Array(-250, 0, -250, -250, 0, 250, 250, 0, -250, 250, 0, 2
 [sub_resource type="PlaneMesh" id="PlaneMesh_xigk5"]
 size = Vector2(300, 300)
 
-[sub_resource type="BoxMesh" id="BoxMesh_xigk5"]
-size = Vector3(120, 20, 30)
+[sub_resource type="BoxShape3D" id="BoxShape3D_ld21q"]
+size = Vector3(60, 30, 20)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_of57s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_b5f6u"]
 
 [node name="Node3D" type="Node3D" unique_id=1597984316]
 script = ExtResource("1_0ha60")
@@ -49,7 +54,7 @@ light_volumetric_fog_energy = 1.075
 light_angular_distance = 3.45
 
 [node name="Diver" parent="." unique_id=2127073738 instance=ExtResource("2_v0l8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5001726, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5001726, 47.12206)
 
 [node name="object" parent="." unique_id=227016478 instance=ExtResource("3_wp4xf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.006567, 0.3333521, 0)
@@ -66,16 +71,31 @@ mouse_filter = 2
 [node name="Oxygen Bar" parent="." unique_id=901570163 instance=ExtResource("7_p1hux")]
 mouse_filter = 2
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=355060166]
+[node name="Floor" type="StaticBody3D" parent="." unique_id=355060166]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=558595842]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=558595842]
 shape = SubResource("ConvexPolygonShape3D_p1hux")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=885407412]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=885407412]
 mesh = SubResource("PlaneMesh_xigk5")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1513577529]
+[node name="Ship" type="StaticBody3D" parent="." unique_id=1848549469]
+transform = Transform3D(0.9094634, -0.12236495, -0.39737016, 0.02873654, 0.9719266, -0.23352262, 0.41478956, 0.20096128, 0.8874482, -25.471283, -2.8493009, -40.90922)
+collision_mask = 15
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1844553802]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.142666, -47.282566)
-mesh = SubResource("BoxMesh_xigk5")
+[node name="testship" parent="Ship" unique_id=1651746157 instance=ExtResource("8_of57s")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ship" unique_id=1274405171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.942467, 0, 0)
+shape = SubResource("BoxShape3D_ld21q")
+
+[node name="Bell" type="StaticBody3D" parent="." unique_id=1608597587]
+transform = Transform3D(0.9999724, 0.007130857, 0.0020820496, -0.007134794, 0.99997276, 0.0018900635, -0.0020685184, -0.0019048627, 0.99999607, 0, 0, 50.850582)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bell" unique_id=1058335617]
+transform = Transform3D(1.9500003, -1.8062565e-09, -4.656613e-10, 1.9417712e-09, 1.9499998, 3.0267984e-09, 4.656613e-10, -3.0267984e-09, 1.9500003, -0.011321671, 1.4503101, 0.0027389526)
+shape = SubResource("CapsuleShape3D_of57s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bell" unique_id=223485990]
+transform = Transform3D(3.5072217, -5.259608e-09, 9.313226e-10, -3.3505785e-09, 3.5072227, -1.3969839e-09, -3.259629e-09, -2.3283064e-09, 3.5072243, -0.005050484, 0.7078475, 0.0013370514)
+mesh = SubResource("CapsuleMesh_b5f6u")

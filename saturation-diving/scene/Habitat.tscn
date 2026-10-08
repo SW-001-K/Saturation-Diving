@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dftdkwpkbaeas"]
+
+[ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="1_33own"]
+[ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="2_7vh43"]
+[ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_hvlqn"]
+
+[sub_resource type="Environment" id="Environment_xigk5"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xigk5"]
+size = Vector2(7, 7)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7vh43"]
+data = PackedVector3Array(3.5, 0, 3.5, -3.5, 0, 3.5, 3.5, 0, -3.5, -3.5, 0, 3.5, -3.5, 0, -3.5, 3.5, 0, -3.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xigk5"]
+
+[node name="Node3D" type="Node3D" unique_id=398861332]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1337673812]
+environment = SubResource("Environment_xigk5")
+
+[node name="Diver" parent="." unique_id=2127073738 instance=ExtResource("1_33own")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1857799, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=214142856]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=576537084]
+mesh = SubResource("PlaneMesh_xigk5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1705825999]
+shape = SubResource("ConcavePolygonShape3D_7vh43")
+
+[node name="Interaction Panel" parent="." unique_id=978939956 instance=ExtResource("2_7vh43")]
+
+[node name="Bed" parent="." unique_id=295776542 instance=ExtResource("3_hvlqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4431887, 0.6665814, 0)
+objectName = "Bed"
+
+[node name="Label3D" type="Label3D" parent="Bed" unique_id=463415611]
+transform = Transform3D(4.371138e-08, -8.7422784e-08, 1, 8.742278e-08, 1, 8.742278e-08, -1, 8.742277e-08, 4.371139e-08, 0.07663298, 0.7851939, -0.032873392)
+text = "Bed
+"
+
+[node name="Door" parent="." unique_id=788081413 instance=ExtResource("3_hvlqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86628, 0.6404486, 0)
+objectName = "Door"
+
+[node name="Label3D" type="Label3D" parent="Door" unique_id=2005863019]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.22720718, 0.7391174, 0.055169158)
+text = "Door
+
+"
+
+[node name="Log Machine" parent="." unique_id=146305111 instance=ExtResource("3_hvlqn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1192317, 0.5280198, -3.0007877)
+objectName = "Log Machine"
+
+[node name="Label3D" type="Label3D" parent="Log Machine" unique_id=506867213]
+transform = Transform3D(1, 8.7422784e-08, -8.742278e-08, -8.742278e-08, 1, 8.742278e-08, 8.7422784e-08, -8.742277e-08, 1, 0.076378584, 0.83448756, 0.27659702)
+text = "Log Machine
+"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=1853664674]
+transform = Transform3D(1, 0, 0, 0, -0.005452769, 0.99998516, 0, -0.99998516, -0.005452769, 0, 5.700381, 0)
+light_energy = 8.52
+light_volumetric_fog_energy = 1.12
+light_size = 2.79
+spot_range = 8.19
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1686003051]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=4060351]
+transform = Transform3D(6.6075573, 0, 0, 0, 6.6075573, 0, 0, 0, 6.6075573, 0, 0, 0)
+shape = SubResource("BoxShape3D_xigk5")

@@ -1,1 +1,2 @@
-extends Node
+extends monsterstate
+class_name attackState
