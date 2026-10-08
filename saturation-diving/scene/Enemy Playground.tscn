@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ckxcpysd56k6x" path="res://src/flight_navigation_3d.tscn" id="2_kkxf6"]
 [ext_resource type="PackedScene" uid="uid://bi00ycifixraq" path="res://assets/3D/PLACEHOLDERFLOOR.blend" id="2_pqurr"]
 [ext_resource type="PackedScene" uid="uid://vd11jcof7n4l" path="res://scene/Monste.tscn" id="3_5rn2x"]
-[ext_resource type="Script" uid="uid://coyxt2si1f62i" path="res://scene/pathfollower.gd" id="3_7ati4"]
+[ext_resource type="Script" uid="uid://coyxt2si1f62i" path="res://scripts/monsterstates/pathfollower.gd" id="3_7ati4"]
 [ext_resource type="Resource" uid="uid://jhidyij13fx3" path="res://scene/Enemy Playground_FlightNavigation3D.res" id="4_eu6bx"]
 [ext_resource type="Script" uid="uid://bulfru8exdq1l" path="res://src/greedy_a_star.gd" id="5_eu6bx"]
 [ext_resource type="PackedScene" uid="uid://b0fdgf5nd6csp" path="res://src/voxelization_target.tscn" id="7_apeyh"]
@@ -29,6 +29,8 @@ _data = {
 }
 point_count = 96
 
+[sub_resource type="BoxMesh" id="BoxMesh_xigk5"]
+
 [sub_resource type="Curve3D" id="Curve3D_7ati4"]
 closed = true
 _data = {
@@ -36,6 +38,8 @@ _data = {
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 149
+
+[sub_resource type="BoxMesh" id="BoxMesh_ld21q"]
 
 [node name="Node3D" type="Node3D" unique_id=665953392]
 
@@ -100,6 +104,9 @@ script = ExtResource("3_7ati4")
 
 [node name="Patrol1" type="Node3D" parent="Patrol 1/PathFollow3D" unique_id=2123230378]
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Patrol 1/PathFollow3D/Patrol1" unique_id=1506911368]
+mesh = SubResource("BoxMesh_xigk5")
+
 [node name="Patrol 2" type="Path3D" parent="." unique_id=477850002]
 curve = SubResource("Curve3D_7ati4")
 
@@ -110,3 +117,6 @@ rotation_mode = 4
 script = ExtResource("3_7ati4")
 
 [node name="Patrol2" type="Node3D" parent="Patrol 2/PathFollow3D" unique_id=532409824]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Patrol 2/PathFollow3D/Patrol2" unique_id=1295218989]
+mesh = SubResource("BoxMesh_ld21q")

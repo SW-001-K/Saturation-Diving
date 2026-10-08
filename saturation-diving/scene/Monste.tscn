@@ -1,7 +1,12 @@
 [gd_scene format=3 uid="uid://vd11jcof7n4l"]
 
 [ext_resource type="PackedScene" uid="uid://d3xkb560q5al4" path="res://assets/3D/monster placeholder.blend" id="1_8g3ub"]
-[ext_resource type="Script" uid="uid://c7haljwhnfnlw" path="res://scene/monster.gd" id="1_er2kg"]
+[ext_resource type="Script" uid="uid://c7haljwhnfnlw" path="res://scripts/monsterstates/monster.gd" id="1_er2kg"]
+[ext_resource type="Script" uid="uid://fni7skpfmbcy" path="res://scripts/playerstates/playerStateManager.gd" id="3_r7odg"]
+[ext_resource type="Script" uid="uid://bdihu6l3ocrj4" path="res://scripts/monsterstates/monsterPatrol.gd" id="4_h7y2k"]
+[ext_resource type="Script" uid="uid://diry6v7frjmoo" path="res://scripts/monsterstates/monsterHunting.gd" id="5_156qi"]
+[ext_resource type="Script" uid="uid://bbox1xhed3wu1" path="res://scripts/monsterstates/monsterPursue.gd" id="6_nb7t7"]
+[ext_resource type="Script" uid="uid://ck78db7ljlvwg" path="res://scripts/monsterstates/monsterTransition.gd" id="7_n3s63"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xigk5"]
 
@@ -14,3 +19,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028787732, -4.472144, 0.36
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=100455720]
 transform = Transform3D(1.3430907, 0, 0, 0, -5.870836e-08, -1.3430907, 0, 1.3430907, -5.870836e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_xigk5")
+
+[node name="monsterStateManager" type="Node" parent="." unique_id=1979993607]
+script = ExtResource("3_r7odg")
+
+[node name="patrol" type="Node3D" parent="monsterStateManager" unique_id=1082620504]
+script = ExtResource("4_h7y2k")
+metadata/_custom_type_script = "uid://bdihu6l3ocrj4"
+
+[node name="hunting" type="Node3D" parent="monsterStateManager" unique_id=707688833]
+script = ExtResource("5_156qi")
+metadata/_custom_type_script = "uid://diry6v7frjmoo"
+
+[node name="pursue" type="Node3D" parent="monsterStateManager" unique_id=178209637]
+script = ExtResource("6_nb7t7")
+metadata/_custom_type_script = "uid://bbox1xhed3wu1"
+
+[node name="transition" type="Node3D" parent="monsterStateManager" unique_id=387577483]
+script = ExtResource("7_n3s63")
+metadata/_custom_type_script = "uid://ck78db7ljlvwg"

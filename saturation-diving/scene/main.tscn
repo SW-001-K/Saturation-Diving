@@ -20,6 +20,15 @@ volumetric_fog_albedo = Color(0.08200996, 0.2850324, 0.36087182, 1)
 
 [sub_resource type="Compositor" id="Compositor_ps1l2"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p1hux"]
+points = PackedVector3Array(-250, 0, -250, -250, 0, 250, 250, 0, -250, 250, 0, 250)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xigk5"]
+size = Vector2(300, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_xigk5"]
+size = Vector3(120, 20, 30)
+
 [node name="Node3D" type="Node3D" unique_id=1597984316]
 script = ExtResource("1_0ha60")
 
@@ -30,6 +39,7 @@ compositor = SubResource("Compositor_ps1l2")
 
 [node name="PLACEHOLDERFLOOR" parent="." unique_id=644889040 instance=ExtResource("1_itxqv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4848766, -2.171517, -2.470321)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1608129238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.371645, 0)
@@ -55,3 +65,17 @@ mouse_filter = 2
 
 [node name="Oxygen Bar" parent="." unique_id=901570163 instance=ExtResource("7_p1hux")]
 mouse_filter = 2
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=355060166]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=558595842]
+shape = SubResource("ConvexPolygonShape3D_p1hux")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=885407412]
+mesh = SubResource("PlaneMesh_xigk5")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1513577529]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=1844553802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.142666, -47.282566)
+mesh = SubResource("BoxMesh_xigk5")

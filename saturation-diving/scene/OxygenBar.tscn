@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0g0ern44x710"]
 
-[ext_resource type="Script" uid="uid://b2puearx6p4oi" path="res://scene/Oxygen Bar.gd" id="1_us4vd"]
+[ext_resource type="Script" uid="uid://b2puearx6p4oi" path="res://scripts/Oxygen Bar.gd" id="1_us4vd"]
 
 [node name="Oxygen Bar" type="Control" unique_id=901570163]
 layout_mode = 3
