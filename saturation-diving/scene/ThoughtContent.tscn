@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://4f7ru6kjv7pv"]
+
+[ext_resource type="Script" uid="uid://cve74k4xghuhd" path="res://scene/ThoughtContent.gd" id="1_6gt4o"]
+
+[node name="ThoughtContent" type="Control" unique_id=1571360189]
+layout_mode = 3
+anchor_left = 0.69200003
+anchor_right = 1.0200001
+anchor_bottom = 1.0
+offset_left = -0.184021
+offset_right = -23.040161
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6gt4o")
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1589229058]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel" unique_id=1995988088]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 14.0
+offset_right = 338.0
+offset_bottom = 56.0
+theme_override_font_sizes/font_size = 24
+
+[node name="Label" type="Label" parent="Panel" unique_id=1532197692]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 56.0
+offset_right = 318.0
+offset_bottom = 203.0
+autowrap_mode = 3

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://u66n2imbnyl" path="res://scene/interactionDebug.tscn" id="6_4j5ol"]
 [ext_resource type="PackedScene" uid="uid://b0g0ern44x710" path="res://scene/OxygenBar.tscn" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://xyjj4swdj4q3" path="res://assets/3D/testship.blend" id="8_of57s"]
+[ext_resource type="PackedScene" uid="uid://cde0nloinb3ys" path="res://assets/3D/testship1.blend" id="8_tqoya"]
 [ext_resource type="Script" uid="uid://bagb8utty5kqb" path="res://scripts/bell.gd" id="9_b5f6u"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
@@ -85,7 +86,10 @@ mesh = SubResource("PlaneMesh_xigk5")
 transform = Transform3D(0.9094634, -0.12236495, -0.39737016, 0.02873654, 0.9719266, -0.23352262, 0.41478956, 0.20096128, 0.8874482, -25.471283, -2.8493009, -40.90922)
 collision_mask = 15
 
+[node name="testship1" parent="Ship" unique_id=1554064528 instance=ExtResource("8_tqoya")]
+
 [node name="testship" parent="Ship" unique_id=1651746157 instance=ExtResource("8_of57s")]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship" unique_id=1274405171]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.942467, 0, 0)

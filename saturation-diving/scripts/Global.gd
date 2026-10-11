@@ -4,6 +4,7 @@ var character : CharacterBody3D
 var debug : Debug
 signal interacted
 signal dayEnd
+signal requestLogInfo
 var dayEnded : bool
 
 
