@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://2ctrjpsypxb7"]
 
+[ext_resource type="Script" uid="uid://cn0dgtrkynowp" path="res://scene/ThoughtSystem.gd" id="1_ifw7j"]
 [ext_resource type="Script" uid="uid://b386oc0c4jqmd" path="res://scene/thoughtscrambler.gd" id="1_ney35"]
 [ext_resource type="PackedScene" uid="uid://bv5mktfe3djhr" path="res://scene/Thoughts.tscn" id="2_helmb"]
+[ext_resource type="Resource" uid="uid://cewbftmdi17l0" path="res://resources/LogsResources/Log3.tres" id="3_15ya3"]
 [ext_resource type="PackedScene" uid="uid://4f7ru6kjv7pv" path="res://scene/ThoughtContent.tscn" id="3_helmb"]
+[ext_resource type="Resource" uid="uid://bn61rvtm3ucsb" path="res://resources/LogsResources/Log1.tres" id="3_xua5x"]
+[ext_resource type="Resource" uid="uid://cnpncrkavwsin" path="res://resources/LogsResources/Log2.tres" id="4_15ya3"]
 
 [node name="Thought System" type="Control" unique_id=739819719]
 layout_mode = 3
@@ -12,6 +16,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_ifw7j")
 
 [node name="Panel" type="Panel" parent="." unique_id=1766265482]
 layout_mode = 1
@@ -39,17 +44,17 @@ script = ExtResource("1_ney35")
 
 [node name="Thoughts3" parent="Container" unique_id=1171408693 instance=ExtResource("2_helmb")]
 layout_mode = 2
-labeltext = "I think boo"
+content = ExtResource("3_15ya3")
 
 [node name="Thoughts" parent="Container" unique_id=565599244 instance=ExtResource("2_helmb")]
 layout_mode = 2
 thoughtID = 1
-labeltext = "I hate boo"
+content = ExtResource("3_xua5x")
 
 [node name="Thoughts2" parent="Container" unique_id=790688736 instance=ExtResource("2_helmb")]
 layout_mode = 2
 thoughtID = 2
-labeltext = "I love boo"
+content = ExtResource("4_15ya3")
 
 [node name="ThoughtContent" parent="." unique_id=1571360189 instance=ExtResource("3_helmb")]
 layout_mode = 1

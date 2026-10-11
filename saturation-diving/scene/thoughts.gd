@@ -3,20 +3,30 @@ var hovering: bool = false
 var dragging: bool = true
 var event : InputEventMouseButton
 @export var thoughtID :int
-
+@export var content: LogData
 
 @onready var label = $Panel/Label
 @onready var panel = $Panel
-@export var labeltext : String
 
 func _ready() -> void:
-	label.text = labeltext
+	self.hide()
+	label.text = content.title
 	panel.mouse_entered.connect(hover)
+	Global.interacted.connect(discovered)
+	
+func discovered(objectName) -> void:
+	#print("I got signal from thoughts")
+	#print(objectName)
+	#print(content.title)
+	if objectName == content.ID:
+		content.discovered = true
+		self.show()
+		
 	
 func _process(delta: float) -> void:
 	if hovering == true:
 		if Input.is_action_just_pressed("mouse_left"):
-			Global.requestLogInfo.emit(thoughtID)
+			Global.requestLogInfo.emit(content)
 		elif Input.is_action_pressed("mouse_left"):
 			"I am being clicked on"
 			panel.global_position = get_global_mouse_position() - Vector2(panel.size.x*0.5, panel.size.y*0.5) 

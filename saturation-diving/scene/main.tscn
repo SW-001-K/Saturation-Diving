@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://cgb18bquwoaaa"]
 
 [ext_resource type="Script" uid="uid://bnbmknagt5gur" path="res://scripts/Global.gd" id="1_0ha60"]
-[ext_resource type="PackedScene" uid="uid://bi00ycifixraq" path="res://assets/3D/PLACEHOLDERFLOOR.blend" id="1_itxqv"]
 [ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="2_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_wp4xf"]
 [ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="4_brvut"]
@@ -10,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://xyjj4swdj4q3" path="res://assets/3D/testship.blend" id="8_of57s"]
 [ext_resource type="PackedScene" uid="uid://cde0nloinb3ys" path="res://assets/3D/testship1.blend" id="8_tqoya"]
 [ext_resource type="Script" uid="uid://bagb8utty5kqb" path="res://scripts/bell.gd" id="9_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://2ctrjpsypxb7" path="res://scene/ThoughtSystem.tscn" id="11_k65ib"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
@@ -45,10 +45,6 @@ environment = SubResource("Environment_83xmj")
 camera_attributes = SubResource("CameraAttributesPractical_ff24q")
 compositor = SubResource("Compositor_ps1l2")
 
-[node name="PLACEHOLDERFLOOR" parent="." unique_id=644889040 instance=ExtResource("1_itxqv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4848766, -2.171517, -2.470321)
-visible = false
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1608129238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.371645, 0)
 light_color = Color(0, 0.8959685, 0.8990491, 1)
@@ -61,10 +57,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5001726, 47.12206)
 
 [node name="object" parent="." unique_id=227016478 instance=ExtResource("3_wp4xf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.006567, 0.3333521, 0)
+objectName = "Log1"
 
 [node name="object2" parent="." unique_id=295776542 instance=ExtResource("3_wp4xf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1537933, 0.3333521, 0)
-objectName = "box 2"
+objectName = "Log2"
 
 [node name="Interaction Panel" parent="." unique_id=978939956 instance=ExtResource("4_brvut")]
 mouse_filter = 2
@@ -108,3 +105,5 @@ mesh = SubResource("CapsuleMesh_b5f6u")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bell" unique_id=1951060335]
 transform = Transform3D(3.5072217, -5.259608e-09, 9.313226e-10, -3.3505785e-09, 3.5072227, -1.3969839e-09, -3.259629e-09, -2.3283064e-09, 3.5072243, -0.005050484, 0.7078475, 0.0013370514)
 shape = SubResource("ConvexPolygonShape3D_b5f6u")
+
+[node name="Thought System" parent="." unique_id=739819719 instance=ExtResource("11_k65ib")]

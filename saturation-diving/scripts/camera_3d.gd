@@ -27,7 +27,7 @@ func _unhandled_input(event: InputEvent):
 	
 
 func _input(_event: InputEvent) -> void:
-	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED and Input.is_action_just_pressed("click_l"):
+	if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED and Input.mouse_mode != Input.MOUSE_MODE_CONFINED and Input.is_action_just_pressed("click_l"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
 	if Input.is_action_pressed("escape"):

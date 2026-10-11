@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LogData" format=3 uid="uid://bn61rvtm3ucsb"]
+
+[ext_resource type="Script" uid="uid://dtukx0vegrijp" path="res://resources/LogsResources/Logs.gd" id="1_7nlmb"]
+
+[resource]
+script = ExtResource("1_7nlmb")
+ID = "Log1"
+title = "Box One"
+description = "A strange box one"
+metadata/_custom_type_script = "uid://dtukx0vegrijp"

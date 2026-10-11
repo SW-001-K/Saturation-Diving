@@ -2,8 +2,8 @@ extends CollisionObject3D
 class_name Interactable
 
 
-@export var prompt_message = "I am "
-@export var objectName : String = "box 1"
+@export var prompt_message : String
+@export var objectName : String 
 
 func interact(body):
 	print("I sent the signal")

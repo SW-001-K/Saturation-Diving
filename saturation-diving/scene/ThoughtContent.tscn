@@ -1,6 +1,11 @@
 [gd_scene format=3 uid="uid://4f7ru6kjv7pv"]
 
 [ext_resource type="Script" uid="uid://cve74k4xghuhd" path="res://scene/ThoughtContent.gd" id="1_6gt4o"]
+[ext_resource type="Script" uid="uid://dtukx0vegrijp" path="res://resources/LogsResources/Logs.gd" id="2_7u50j"]
+
+[sub_resource type="Resource" id="Resource_xua5x"]
+script = ExtResource("2_7u50j")
+metadata/_custom_type_script = "uid://dtukx0vegrijp"
 
 [node name="ThoughtContent" type="Control" unique_id=1571360189]
 layout_mode = 3
@@ -12,6 +17,7 @@ offset_right = -23.040161
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6gt4o")
+content = SubResource("Resource_xua5x")
 metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="." unique_id=1589229058]

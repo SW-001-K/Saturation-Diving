@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LogData" format=3 uid="uid://cewbftmdi17l0"]
+
+[ext_resource type="Script" uid="uid://dtukx0vegrijp" path="res://resources/LogsResources/Logs.gd" id="1_bqa4h"]
+
+[resource]
+script = ExtResource("1_bqa4h")
+ID = "Log3"
+title = "Ship"
+description = "Ship I was tasked to investigate"
+metadata/_custom_type_script = "uid://dtukx0vegrijp"
