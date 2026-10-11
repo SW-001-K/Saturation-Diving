@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="1_33own"]
 [ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="2_7vh43"]
 [ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_hvlqn"]
+[ext_resource type="Script" uid="uid://bjpk6fjgs0kjl" path="res://scripts/habitatdoor.gd" id="4_4lap5"]
 
 [sub_resource type="Environment" id="Environment_xigk5"]
 
@@ -34,7 +35,6 @@ shape = SubResource("ConcavePolygonShape3D_7vh43")
 
 [node name="Bed" parent="." unique_id=295776542 instance=ExtResource("3_hvlqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4431887, 0.6665814, 0)
-objectName = "Bed"
 
 [node name="Label3D" type="Label3D" parent="Bed" unique_id=463415611]
 transform = Transform3D(4.371138e-08, -8.7422784e-08, 1, 8.742278e-08, 1, 8.742278e-08, -1, 8.742277e-08, 4.371139e-08, 0.07663298, 0.7851939, -0.032873392)
@@ -43,6 +43,7 @@ text = "Bed
 
 [node name="Door" parent="." unique_id=788081413 instance=ExtResource("3_hvlqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.86628, 0.6404486, 0)
+script = ExtResource("4_4lap5")
 objectName = "Door"
 
 [node name="Label3D" type="Label3D" parent="Door" unique_id=2005863019]

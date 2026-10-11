@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dtd34rcxtu4d8"]
+
+[node name="Control" type="Control" unique_id=1199897568]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=1771695240]
+custom_maximum_size = Vector2(-1, 50)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.059000004
+anchor_right = 0.246
+anchor_bottom = 0.059000004
+offset_left = 15.0
+offset_top = -22.232002
+offset_right = -0.3919983
+offset_bottom = 22.767998
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1892775677]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=1714223726]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Day: 1"

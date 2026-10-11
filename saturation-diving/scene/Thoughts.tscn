@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bv5mktfe3djhr"]
+
+[ext_resource type="Script" uid="uid://bxo5msivlrsj2" path="res://scene/thoughts.gd" id="1_3pu3b"]
+
+[node name="Thoughts" type="Control" unique_id=1171408693]
+layout_mode = 3
+anchor_right = 0.145
+anchor_bottom = 0.063
+offset_right = 1.8559875
+offset_bottom = -0.1760025
+grow_horizontal = 2
+size_flags_vertical = 4
+script = ExtResource("1_3pu3b")
+
+[node name="Panel" type="Panel" parent="." unique_id=617981735]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.99000007
+anchor_bottom = 1.0
+offset_right = 1.9999847
+
+[node name="Label" type="Label" parent="Panel" unique_id=1269683602]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = -2.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "THOUGHT NAME"

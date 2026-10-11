@@ -1,0 +1,37 @@
+extends Control
+var hovering: bool = false
+var dragging: bool = true
+
+@onready var label = $Panel/Label
+@onready var panel = $Panel
+@export var labeltext : String
+
+func _ready() -> void:
+	label.text = labeltext
+	panel.mouse_entered.connect(hover)
+	
+func _process(delta: float) -> void:
+	if hovering == true:
+		if Input.is_action_pressed("mouse_left"):
+			"I am being clicked on"
+			panel.global_position = get_global_mouse_position()
+			dragging = true
+			
+		elif Input.is_action_just_released("mouse_left"):
+			dragging = false
+			hovering = false
+			
+	
+
+func hover():
+	print("I am hovering")
+	hovering = true
+	
+
+func _on_mouse_entered() -> void:
+
+	pass # Replace with function body.
+
+
+func _on_mouse_exited() -> void:
+	pass # Replace with function body.

@@ -53,7 +53,7 @@ func receiveSignal(signalName):
 		if signalName == "jump":
 			currentState.Change_State("jump")
 #
-	Global.debug.addDebugProperty("State", currentState, 1)
+	Global.debug.addDebugProperty("State", currentState.name , 1)
 
 		
 

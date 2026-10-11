@@ -3,6 +3,8 @@ extends Node
 var character : CharacterBody3D
 var debug : Debug
 signal interacted
+signal dayEnd
+var dayEnded : bool
 
 
 
