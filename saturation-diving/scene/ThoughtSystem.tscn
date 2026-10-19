@@ -48,12 +48,10 @@ content = ExtResource("3_15ya3")
 
 [node name="Thoughts" parent="Container" unique_id=565599244 instance=ExtResource("2_helmb")]
 layout_mode = 2
-thoughtID = 1
 content = ExtResource("3_xua5x")
 
 [node name="Thoughts2" parent="Container" unique_id=790688736 instance=ExtResource("2_helmb")]
 layout_mode = 2
-thoughtID = 2
 content = ExtResource("4_15ya3")
 
 [node name="ThoughtContent" parent="." unique_id=1571360189 instance=ExtResource("3_helmb")]

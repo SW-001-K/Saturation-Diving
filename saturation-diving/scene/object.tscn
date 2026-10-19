@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dq24dqojw5ymq"]
 
-[ext_resource type="Script" uid="uid://dwsrd1iq6krjs" path="res://scripts/interactable.gd" id="1_8pbu7"]
+[ext_resource type="Script" uid="uid://dwsrd1iq6krjs" path="res://scripts/interactions/interactable.gd" id="1_8pbu7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xigk5"]
 

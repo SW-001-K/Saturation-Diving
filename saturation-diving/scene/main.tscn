@@ -8,8 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://b0g0ern44x710" path="res://scene/OxygenBar.tscn" id="7_p1hux"]
 [ext_resource type="PackedScene" uid="uid://xyjj4swdj4q3" path="res://assets/3D/testship.blend" id="8_of57s"]
 [ext_resource type="PackedScene" uid="uid://cde0nloinb3ys" path="res://assets/3D/testship1.blend" id="8_tqoya"]
-[ext_resource type="Script" uid="uid://bagb8utty5kqb" path="res://scripts/bell.gd" id="9_b5f6u"]
+[ext_resource type="Script" uid="uid://bagb8utty5kqb" path="res://scripts/interactions/bell.gd" id="9_b5f6u"]
 [ext_resource type="PackedScene" uid="uid://2ctrjpsypxb7" path="res://scene/ThoughtSystem.tscn" id="11_k65ib"]
+[ext_resource type="PackedScene" uid="uid://dtd34rcxtu4d8" path="res://scene/DayDebugger.tscn" id="11_wscrc"]
+[ext_resource type="Script" uid="uid://cfq0pn2q6yi1s" path="res://scripts/Day Manager.gd" id="12_mswub"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
@@ -107,3 +109,8 @@ transform = Transform3D(3.5072217, -5.259608e-09, 9.313226e-10, -3.3505785e-09, 
 shape = SubResource("ConvexPolygonShape3D_b5f6u")
 
 [node name="Thought System" parent="." unique_id=739819719 instance=ExtResource("11_k65ib")]
+
+[node name="Control2" parent="." unique_id=1199897568 instance=ExtResource("11_wscrc")]
+mouse_filter = 2
+mouse_force_pass_scroll_events = false
+script = ExtResource("12_mswub")

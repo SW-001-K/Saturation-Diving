@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="1_33own"]
 [ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="2_7vh43"]
 [ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_hvlqn"]
-[ext_resource type="Script" uid="uid://bjpk6fjgs0kjl" path="res://scripts/habitatdoor.gd" id="4_4lap5"]
+[ext_resource type="Script" uid="uid://bjpk6fjgs0kjl" path="res://scripts/interactions/habitatdoor.gd" id="4_4lap5"]
+[ext_resource type="Script" uid="uid://dsqdqrktagwls" path="res://scene/Bed.gd" id="4_7irqe"]
+[ext_resource type="PackedScene" uid="uid://dtd34rcxtu4d8" path="res://scene/DayDebugger.tscn" id="6_v5sou"]
+[ext_resource type="Script" uid="uid://cfq0pn2q6yi1s" path="res://scripts/Day Manager.gd" id="7_65shy"]
 
 [sub_resource type="Environment" id="Environment_xigk5"]
 
@@ -35,6 +38,7 @@ shape = SubResource("ConcavePolygonShape3D_7vh43")
 
 [node name="Bed" parent="." unique_id=295776542 instance=ExtResource("3_hvlqn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4431887, 0.6665814, 0)
+script = ExtResource("4_7irqe")
 
 [node name="Label3D" type="Label3D" parent="Bed" unique_id=463415611]
 transform = Transform3D(4.371138e-08, -8.7422784e-08, 1, 8.742278e-08, 1, 8.742278e-08, -1, 8.742277e-08, 4.371139e-08, 0.07663298, 0.7851939, -0.032873392)
@@ -73,3 +77,7 @@ spot_range = 8.19
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=4060351]
 transform = Transform3D(6.6075573, 0, 0, 0, 6.6075573, 0, 0, 0, 6.6075573, 0, 0, 0)
 shape = SubResource("BoxShape3D_xigk5")
+
+[node name="Control" parent="." unique_id=1199897568 instance=ExtResource("6_v5sou")]
+mouse_filter = 2
+script = ExtResource("7_65shy")

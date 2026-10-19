@@ -3,6 +3,7 @@ var hiddenMenu: bool = true
 
 func _ready() -> void:
 	self.hide()
+	pass
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("open_menu"):

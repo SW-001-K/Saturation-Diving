@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://dtd34rcxtu4d8"]
 
+[ext_resource type="Script" uid="uid://b7rl5rstbbhc2" path="res://scene/dayDebugger.gd" id="2_v3gp0"]
+
 [node name="Control" type="Control" unique_id=1199897568]
 layout_mode = 3
 anchors_preset = 15
@@ -29,3 +31,4 @@ offset_bottom = 40.0
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "Day: 1"
+script = ExtResource("2_v3gp0")

@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_7nlmb")
 ID = "Log1"
-title = "Box One"
-description = "A strange box one"
+title = "Max Profit"
+description = "Max Profit is the CEO of this Company"
 metadata/_custom_type_script = "uid://dtukx0vegrijp"

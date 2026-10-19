@@ -2,5 +2,5 @@ extends Interactable
 
 
 func interact(body):
+	Global.dayEnd.emit("exit")
 	print("I am the door")
-	get_tree().change_scene_to_file("res://scene/main.tscn")

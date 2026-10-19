@@ -2,7 +2,6 @@ extends Control
 var hovering: bool = false
 var dragging: bool = true
 var event : InputEventMouseButton
-@export var thoughtID :int
 @export var content: LogData
 
 @onready var label = $Panel/Label
