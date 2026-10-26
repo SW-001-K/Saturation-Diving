@@ -1,6 +1,7 @@
 extends stateMachine
 @export var diver: CharacterBody3D
 
+
 func getNodeNames(nodeName: String) -> state:
 	for child in get_children():
 		if states[child.name.to_lower()] == states[nodeName]:

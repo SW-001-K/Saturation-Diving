@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://vd11jcof7n4l"]
 
 [ext_resource type="PackedScene" uid="uid://d3xkb560q5al4" path="res://assets/3D/monster placeholder.blend" id="1_8g3ub"]
-[ext_resource type="Script" uid="uid://c7haljwhnfnlw" path="res://scripts/monsterstates/monster.gd" id="1_er2kg"]
 [ext_resource type="Script" uid="uid://06ijh426md6y" path="res://scripts/monsterstates/monsterStateManager.gd" id="3_n3s63"]
 [ext_resource type="Script" uid="uid://bdihu6l3ocrj4" path="res://scripts/monsterstates/monsterPatrol.gd" id="4_h7y2k"]
 [ext_resource type="Script" uid="uid://diry6v7frjmoo" path="res://scripts/monsterstates/monsterHunting.gd" id="5_156qi"]
@@ -12,7 +11,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xigk5"]
 
 [node name="Monster" type="CharacterBody3D" unique_id=2059892976]
-script = ExtResource("1_er2kg")
 
 [node name="monster placeholder" parent="." unique_id=2087020311 instance=ExtResource("1_8g3ub")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028787732, -4.472144, 0.36976528)
@@ -21,8 +19,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028787732, -4.472144, 0.36
 transform = Transform3D(1.3430907, 0, 0, 0, -5.870836e-08, -1.3430907, 0, 1.3430907, -5.870836e-08, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_xigk5")
 
-[node name="monsterStateManager" type="Node" parent="." unique_id=1979993607 node_paths=PackedStringArray("initialState")]
+[node name="monsterStateManager" type="Node" parent="." unique_id=1979993607 node_paths=PackedStringArray("monster", "initialState")]
 script = ExtResource("3_n3s63")
+monster = NodePath("..")
 initialState = NodePath("patrol")
 
 [node name="patrol" type="Node3D" parent="monsterStateManager" unique_id=1082620504 node_paths=PackedStringArray("monster")]

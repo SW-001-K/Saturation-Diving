@@ -1,9 +1,6 @@
 extends playerstate
 class_name swimState
 
-
-@export var diver: CharacterBody3D
-
 const SPEED = 2
 const JUMP_VELOCITY = 10.5
 
