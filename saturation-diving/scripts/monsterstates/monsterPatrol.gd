@@ -1,13 +1,23 @@
 extends monsterstate
 class_name patrolState
 
-var pathOne: Node3D
-var pathTwo: Node3D
+#Me when I hardcode my paths
+
+var pathA: Node3D
+var pathB: Node3D
+var pathC: Node3D
 
 func Enter():
-	pathOne = get_node("../../../Patrol 1/PathFollow3D/Patrol1")
+	pathA = get_node("../../../Patrol A/PathA/PathA")
+	currentPath = pathA
+	
+	
+func Patrol(path):
+	monster.position = path.global_position
+	print(monster.global_position)
+	
 
 func Physics_Update(_delta: float):
-	monster.position = pathOne.global_position
-	print("I am path one")
+	Patrol(currentPath)
+	print("I am ", currentPath.name, " from state machine")
 	

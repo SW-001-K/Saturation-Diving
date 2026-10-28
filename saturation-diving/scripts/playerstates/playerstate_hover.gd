@@ -1,6 +1,6 @@
 extends playerstate
 class_name hoverState
-@export var diver: CharacterBody3D
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 5

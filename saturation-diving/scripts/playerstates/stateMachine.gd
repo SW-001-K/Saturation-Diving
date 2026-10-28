@@ -51,4 +51,5 @@ func on_child_transition(State, newStateName):
 	pass
 
 func receiveSignal(signalName):
-	print("I received the signal ", signalName)
+	#print("I received the signal ", signalName)
+	pass
