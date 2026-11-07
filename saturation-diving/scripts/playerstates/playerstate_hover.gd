@@ -2,7 +2,7 @@ extends playerstate
 class_name hoverState
 
 
-const SPEED = 5.0
+const SPEED = 100.0
 const JUMP_VELOCITY = 5
 
 # Called when the node enters the scene tree for the first time.
@@ -15,12 +15,14 @@ func Enter():
 
 ## Called every frame. 'delta' is the elapsed time since the previous frame.
 func Physics_Update(delta: float):
-	diver.move_and_slide()
 
+	diver.velocity.x = 0
+	diver.velocity.z = 0
 	#Add the gravity.
 	if not diver.is_on_floor():
 		diver.velocity += diver.get_gravity() * delta
 		
+	diver.move_and_slide()
 	
 
 	## Handle jump.

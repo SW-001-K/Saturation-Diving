@@ -16,7 +16,7 @@ func Update(_delta:float):
 	if Input.is_action_just_pressed("alert"):
 			Alert()
 
-	if Input.get_vector("left", "right", "forward", "back",):
+	elif Input.get_vector("left", "right", "forward", "back",):
 			Press.emit("move")
 			
 	else: Press.emit("null")
