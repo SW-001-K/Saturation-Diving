@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://4f7ru6kjv7pv" path="res://scene/ThoughtContent.tscn" id="3_helmb"]
 [ext_resource type="Resource" uid="uid://bn61rvtm3ucsb" path="res://resources/LogsResources/Log1.tres" id="3_xua5x"]
 [ext_resource type="Resource" uid="uid://cnpncrkavwsin" path="res://resources/LogsResources/Log2.tres" id="4_15ya3"]
+[ext_resource type="Resource" path="res://resources/LogsResources/Log4.tres" id="7_7b4wc"]
 
 [node name="Thought System" type="Control" unique_id=739819719]
 layout_mode = 3
@@ -53,6 +54,10 @@ content = ExtResource("3_xua5x")
 [node name="Thoughts2" parent="Container" unique_id=790688736 instance=ExtResource("2_helmb")]
 layout_mode = 2
 content = ExtResource("4_15ya3")
+
+[node name="Thoughts4" parent="Container" unique_id=1550241257 instance=ExtResource("2_helmb")]
+layout_mode = 2
+content = ExtResource("7_7b4wc")
 
 [node name="ThoughtContent" parent="." unique_id=1571360189 instance=ExtResource("3_helmb")]
 layout_mode = 1

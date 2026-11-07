@@ -1,23 +1,13 @@
 [gd_scene format=3 uid="uid://cgb18bquwoaaa"]
 
-[ext_resource type="Script" uid="uid://bnbmknagt5gur" path="res://scripts/Global.gd" id="1_0ha60"]
-[ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="2_v0l8b"]
-[ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_wp4xf"]
-[ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="4_brvut"]
-[ext_resource type="PackedScene" uid="uid://u66n2imbnyl" path="res://scene/interactionDebug.tscn" id="6_4j5ol"]
-[ext_resource type="PackedScene" uid="uid://b0g0ern44x710" path="res://scene/OxygenBar.tscn" id="7_p1hux"]
-[ext_resource type="PackedScene" uid="uid://xyjj4swdj4q3" path="res://assets/3D/testship.blend" id="8_of57s"]
-[ext_resource type="PackedScene" uid="uid://cde0nloinb3ys" path="res://assets/3D/testship1.blend" id="8_tqoya"]
-[ext_resource type="Script" uid="uid://bagb8utty5kqb" path="res://scripts/interactions/bell.gd" id="9_b5f6u"]
-[ext_resource type="PackedScene" uid="uid://b0fdgf5nd6csp" path="res://src/voxelization_target.tscn" id="9_jcbur"]
-[ext_resource type="PackedScene" uid="uid://2ctrjpsypxb7" path="res://scene/ThoughtSystem.tscn" id="11_k65ib"]
-[ext_resource type="PackedScene" uid="uid://dtd34rcxtu4d8" path="res://scene/DayDebugger.tscn" id="11_wscrc"]
-[ext_resource type="Script" uid="uid://cfq0pn2q6yi1s" path="res://scripts/Day Manager.gd" id="12_mswub"]
-[ext_resource type="Script" uid="uid://coyxt2si1f62i" path="res://scripts/monsterstates/pathfollower.gd" id="13_hybxs"]
-[ext_resource type="PackedScene" uid="uid://b5uh28pkowt6b" path="res://path.tscn" id="13_mswub"]
-[ext_resource type="PackedScene" uid="uid://vd11jcof7n4l" path="res://scene/Monste.tscn" id="15_v2gmf"]
-[ext_resource type="PackedScene" uid="uid://ckxcpysd56k6x" path="res://src/flight_navigation_3d.tscn" id="17_tv8i1"]
-[ext_resource type="Resource" uid="uid://sc18ckshygaf" path="res://scene/main_FlightNavigation3D.res" id="18_0vlqb"]
+[ext_resource type="Script" uid="uid://cn0dgtrkynowp" path="res://scene/ThoughtSystem.gd" id="1_of57s"]
+[ext_resource type="Script" uid="uid://b386oc0c4jqmd" path="res://scene/thoughtscrambler.gd" id="2_b5f6u"]
+[ext_resource type="PackedScene" uid="uid://bv5mktfe3djhr" path="res://scene/Thoughts.tscn" id="3_tqoya"]
+[ext_resource type="Resource" uid="uid://cewbftmdi17l0" path="res://resources/LogsResources/Log3.tres" id="4_k65ib"]
+[ext_resource type="Resource" uid="uid://bn61rvtm3ucsb" path="res://resources/LogsResources/Log1.tres" id="5_wscrc"]
+[ext_resource type="Resource" uid="uid://cnpncrkavwsin" path="res://resources/LogsResources/Log2.tres" id="6_mswub"]
+[ext_resource type="Resource" path="res://resources/LogsResources/Log4.tres" id="7_hybxs"]
+[ext_resource type="PackedScene" uid="uid://4f7ru6kjv7pv" path="res://scene/ThoughtContent.tscn" id="8_v2gmf"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
@@ -102,24 +92,47 @@ objectName = "Log2"
 
 [node name="Interaction Panel" parent="." unique_id=978939956 instance=ExtResource("4_brvut")]
 mouse_filter = 2
+script = ExtResource("1_of57s")
 
-[node name="Control" parent="." unique_id=802342564 instance=ExtResource("6_4j5ol")]
+[node name="Panel" type="Panel" parent="." unique_id=1766265482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 53.0
+offset_right = -357.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Oxygen Bar" parent="." unique_id=901570163 instance=ExtResource("7_p1hux")]
-mouse_filter = 2
+[node name="Container" type="Container" parent="." unique_id=2144084448]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = 0.07300001
+anchor_right = 0.845
+anchor_bottom = 0.90700006
+offset_left = -178.56
+offset_top = 5.6959953
+offset_right = -178.44006
+offset_bottom = 6.263977
+script = ExtResource("2_b5f6u")
 
-[node name="Floor" type="StaticBody3D" parent="." unique_id=355060166]
+[node name="Thoughts3" parent="Container" unique_id=1171408693 instance=ExtResource("3_tqoya")]
+layout_mode = 2
+content = ExtResource("4_k65ib")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=558595842]
-shape = SubResource("ConvexPolygonShape3D_p1hux")
+[node name="Thoughts" parent="Container" unique_id=565599244 instance=ExtResource("3_tqoya")]
+layout_mode = 2
+content = ExtResource("5_wscrc")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=885407412]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87773514, 0.022659302, -0.9209521)
 mesh = SubResource("PlaneMesh_xigk5")
 
-[node name="Ship" type="StaticBody3D" parent="." unique_id=1848549469]
-transform = Transform3D(0.9094634, -0.12236495, -0.39737016, 0.02873654, 0.9719266, -0.23352262, 0.41478956, 0.20096128, 0.8874482, -25.471283, -2.8493009, -9.03397)
-collision_mask = 15
+[node name="Thoughts4" parent="Container" unique_id=1550241257 instance=ExtResource("3_tqoya")]
+layout_mode = 2
+content = ExtResource("7_hybxs")
 
 [node name="testship1" parent="Ship" unique_id=1554064528 instance=ExtResource("8_tqoya")]
 transform = Transform3D(1, -1.4901161e-08, 5.9604645e-08, 0, 1, -2.9802322e-08, 0, -2.9802322e-08, 1, 0.0034885406, -0.0011223555, -0.0013694763)
