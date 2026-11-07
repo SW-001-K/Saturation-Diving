@@ -161,7 +161,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14636993, 49.515484, -158.
 curve = SubResource("Curve3D_wscrc")
 
 [node name="PathA" type="PathFollow3D" parent="Patrol A" unique_id=147070227]
-transform = Transform3D(-0.62594646, 0.023738, 0.77949935, 0.057277538, 0.99822044, 0.015595025, -0.7777551, 0.054409027, -0.6262017, 16.831875, -15.617379, 232.82979)
+transform = Transform3D(-0.6259465, 0.023737999, 0.77949935, 0.05727754, 0.9982204, 0.015595025, -0.77775514, 0.054409023, -0.6262017, 16.831875, -15.617379, 232.82979)
 progress = 298.65485
 script = ExtResource("13_hybxs")
 pathName = "PathA"
@@ -175,7 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.179195, 19.016792, 0)
 curve = SubResource("Curve3D_hybxs")
 
 [node name="PathB" type="PathFollow3D" parent="Patrol B" unique_id=963909059]
-transform = Transform3D(-0.9951004, -0.0039002232, -0.09877728, 4.656605e-10, 0.99919987, -0.03945502, 0.09885423, -0.03926098, -0.9943257, -1.2772515, 0.47545436, 9.96851)
+transform = Transform3D(-0.9951004, -0.003900223, -0.09877728, 4.656605e-10, 0.9991998, -0.03945502, 0.09885423, -0.039260976, -0.9943257, -1.2772515, 0.47545436, 9.96851)
 progress = 11.598267
 script = ExtResource("13_hybxs")
 pathName = "PathB"
@@ -189,7 +189,7 @@ transform = Transform3D(0.99983144, 0, 0, 0, 1.4025738, 0, 0, 0, 1.184455, -36.4
 curve = SubResource("Curve3D_v2gmf")
 
 [node name="PathC" type="PathFollow3D" parent="Patrol C" unique_id=911058938]
-transform = Transform3D(0.048869163, 0.07823647, -0.99572814, -0.08324803, 0.9937522, 0.07399819, 0.995318, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
+transform = Transform3D(0.04886916, 0.07823647, -0.99572814, -0.08324802, 0.9937522, 0.07399819, 0.99531794, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
 progress = 66.82306
 script = ExtResource("13_hybxs")
 pathName = "PathC"
