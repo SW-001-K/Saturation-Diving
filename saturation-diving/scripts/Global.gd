@@ -6,8 +6,12 @@ signal interacted
 signal dayEnd #function that handles day interactions. I know, stupid name, I'll regret it 
 signal requestLogInfo
 signal alert
+signal doneTransitioning
 var dayEnded : bool 
 var dayCount = 1
+
+var currentPath
+var nextPath
 
 
 

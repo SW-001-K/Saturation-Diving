@@ -1,4 +1,4 @@
 extends monsterstate
 class_name huntingState
 
-#for hunting
+#for hunting, lets chop this one off first

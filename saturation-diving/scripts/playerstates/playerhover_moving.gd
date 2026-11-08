@@ -11,7 +11,7 @@ func Enter():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func Physics_Update(delta: float):
-	print("I am very much moving")
+	#print("I am very much moving")
 	# Add the gravity.
 	if not diver.is_on_floor():
 		diver.velocity += diver.get_gravity() * delta

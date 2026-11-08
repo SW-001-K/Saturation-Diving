@@ -1,13 +1,8 @@
 extends monsterstate
 class_name pursueState
  
-#for pursue, im thinking of a basic function that takes point A and B 
-#Get the points from signals and stuff
-#pursue is the code that handles monster going from point A to B 
+#for pursue, im thinking of a basic function that makes the monster chase the player
 
-#I will pseudocode hell today then. I deserve that at least. 
-
-#var destination
 
 #Physics_Update():
 

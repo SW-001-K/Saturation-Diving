@@ -35,29 +35,52 @@ func Create_Curve(arrayList) -> Curve3D:
 #sets the path ONCE
 func Create_Path():
 	if pathCreated == false:
-		var path = flightNavigation.find_path(monster.global_position, nextPath.global_position)
+		var path = flightNavigation.find_path(monster.global_position, Global.nextPath.global_position)
+		print(monster.global_position)
+		print(Global.nextPath.global_position)
+		
+		#so it make sense
+		
+		path[0] = monster.global_position
 		tempPath.set_curve(Create_Curve(path))
 		pathCreated = true
 		
 func Transition(delta):
-	if nextPath != null:
-		Create_Path()
 
 	#this is stupid fr fr so true
-	if tempPathFollow.progress_ratio < 0.99:
-		tempPathFollow.progress_ratio += 0.01 * monsterSpeed
-		#print(tempPathFollow.progress_ratio)
+	if tempPath != null:
+		if Global.nextPath != null:
+			Create_Path()
+		
+		if tempPathFollow.progress_ratio < 0.99:
+			tempPathFollow.progress_ratio += 0.01 * monsterSpeed
+			#print(tempPathFollow.progress_ratio)
+				
+			#don't forget to add lerp so it smoothens out but I think it's decent
+			monster.global_position =  tempPathFollow.global_position
+			monster.global_rotation =  tempPathFollow.global_rotation
 			
-		#don't forget to add lerp so it smoothens out but I think it's decent
-		monster.global_position =  tempPathFollow.global_position
-		monster.global_rotation =  tempPathFollow.global_rotation
-		
-	else: 
-		t += delta * 0.9
-		monster.position = monster.position.lerp(nextPath.global_position, t)
-		print(t)
-		
-		
+		else: 
+			if t < 1:
+				t += delta * 0.9
+				monster.position = monster.position.lerp(Global.nextPath.global_position, t)
+				print(t)
+				
+			elif t > 0.99:
+				print("I am done done")
+				
+				#update global path 
+				Global.currentPath = Global.nextPath
+				
+				tempPath.queue_free()
+				tempPathFollow.queue_free()
+				pathCreated = false
+				t = 0
+				
+				#emit a global signal that state machines can catch #yup
+				Global.doneTransitioning.emit("transitioned")
+				#I guess I should just use a global variable atp. Or put it inside monster
+				
 		#the lerp way which is bad
 		#t += delta * 0.9
 		#if path != null:
@@ -75,7 +98,6 @@ func Transition(delta):
 					#print("current path is ", currentPath, "next path is ", nextPath)
 			#
 		
-
 	
 func Update(_delta:float):
 	Transition(_delta)

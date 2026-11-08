@@ -5,8 +5,6 @@ class_name monsterstate
 
 
 var monsterSpeed = 1
-var currentPath
-var nextPath = null
 var flightNavigation
 
 var pathA: Node3D
@@ -18,22 +16,24 @@ func _ready() -> void:
 	pathA = get_node("../../../Patrol A/PathA/PathA")
 	pathB = get_node("../../../Patrol B/PathB/PathB")
 	pathC = get_node("../../../Patrol C/PathC/PathC")
-	currentPath = pathA
+	Global.currentPath = pathA
 	flightNavigation = get_node("../../../FlightNavigation3D")
 	Global.alert.connect(Find_Next_Path) #this is the sound
 
 #function to find next path
 func Find_Next_Path(diverPos):
 	print(diverPos.distance_to(monster.global_position))
-	if currentPath == pathA:
-		nextPath = pathB
-		currentPath = pathB
+	if Global.currentPath == pathA:
+		Global.nextPath = pathB
 		
-	elif currentPath == pathB:
-		nextPath = pathC
+	elif Global.currentPath == pathB:
+		Global.nextPath = pathC
 		
-	elif currentPath == pathC:
-		nextPath = pathA
+	elif Global.currentPath == pathC:
+		Global.nextPath = pathA
+		
+	print("next path is: ", Global.nextPath)
+	print("curr path is: ", Global.currentPath)
 		
 	pass
 	

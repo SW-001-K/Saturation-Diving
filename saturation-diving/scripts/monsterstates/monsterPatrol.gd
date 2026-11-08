@@ -12,11 +12,12 @@ func Enter():
 
 func Patrol(path):
 	monster.position = path.global_position
+	monster.global_rotation = path.global_rotation
 	#print(monster.global_position)
 	
 
 func Physics_Update(_delta: float):
-	Patrol(currentPath)
+	Patrol(Global.currentPath)
 	
 	#print("I am ", currentPath.name, " from state machine")
 	

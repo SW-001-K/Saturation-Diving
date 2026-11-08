@@ -14,6 +14,7 @@ func getNodeNames(nodeName: String) -> state:
 func _init():
 	Global.alert.connect(Location_Capture)
 	signalName.connect(receiveSignal)
+	Global.doneTransitioning.connect(receiveSignal)
 
 #for whatever reason, might be bloat though
 
@@ -35,7 +36,7 @@ func receiveSignal(signalName):
 			getNodeNames("patrol").Change_State("transition")
 			
 	elif currentState == getNodeNames("transition"):
-		if signalName == "alert":
+		if signalName == "transitioned":
 			getNodeNames("transition").Change_State("patrol")
 			
 		pass
