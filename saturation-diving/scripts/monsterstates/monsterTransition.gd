@@ -40,8 +40,10 @@ func Create_Path():
 		print(Global.nextPath.global_position)
 		
 		#so it make sense
-		
+	
 		path[0] = monster.global_position
+		path[path.size()-1] = Global.nextPath.global_position
+		
 		tempPath.set_curve(Create_Curve(path))
 		pathCreated = true
 		
@@ -53,7 +55,7 @@ func Transition(delta):
 			Create_Path()
 		
 		if tempPathFollow.progress_ratio < 0.99:
-			tempPathFollow.progress_ratio += 0.01 * monsterSpeed
+			tempPathFollow.progress_ratio += 0.005 * monsterSpeed
 			#print(tempPathFollow.progress_ratio)
 				
 			#don't forget to add lerp so it smoothens out but I think it's decent
@@ -62,9 +64,10 @@ func Transition(delta):
 			
 		else: 
 			if t < 1:
-				t += delta * 0.9
+				t += delta * 0.5
 				monster.position = monster.position.lerp(Global.nextPath.global_position, t)
-				print(t)
+				monster.rotation = monster.rotation.lerp(Global.nextPath.global_rotation, t)
+				#print(t)
 				
 			elif t > 0.99:
 				print("I am done done")

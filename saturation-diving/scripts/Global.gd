@@ -6,12 +6,14 @@ signal interacted
 signal dayEnd #function that handles day interactions. I know, stupid name, I'll regret it 
 signal requestLogInfo
 signal alert
-signal doneTransitioning
+signal doneTransitioning #sends over diver pos from state machine
 var dayEnded : bool 
 var dayCount = 1
 
 var currentPath
 var nextPath
+
+var diverPosition
 
 
 

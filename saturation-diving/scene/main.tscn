@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgb18bquwoaaa"]
 
 [ext_resource type="Script" uid="uid://bnbmknagt5gur" path="res://scripts/Global.gd" id="1_0ha60"]
+[ext_resource type="PackedScene" uid="uid://cfa6746r6i4hr" path="res://scene/camera_shader.tscn" id="2_0vlqb"]
 [ext_resource type="PackedScene" uid="uid://cefjaoc0nspy4" path="res://scene/diver.tscn" id="2_v0l8b"]
 [ext_resource type="PackedScene" uid="uid://dq24dqojw5ymq" path="res://scene/object.tscn" id="3_wp4xf"]
 [ext_resource type="PackedScene" uid="uid://ch6mn288455oo" path="res://scene/stateDebug.tscn" id="4_brvut"]
@@ -24,8 +25,9 @@ ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.055
-volumetric_fog_albedo = Color(0.08200996, 0.2850324, 0.36087182, 1)
+volumetric_fog_density = 0.222
+volumetric_fog_albedo = Color(0.02826115, 0.15020889, 0.19509584, 1)
+volumetric_fog_emission = Color(0.09620481, 0.09620472, 0.09620469, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ff24q"]
 
@@ -76,6 +78,8 @@ point_count = 6
 
 [node name="Node3D" type="Node3D" unique_id=1597984316]
 script = ExtResource("1_0ha60")
+
+[node name="CameraShader" parent="." unique_id=1195498313 instance=ExtResource("2_0vlqb")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=918976540]
 environment = SubResource("Environment_83xmj")
@@ -161,7 +165,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14636993, 49.515484, -158.
 curve = SubResource("Curve3D_wscrc")
 
 [node name="PathA" type="PathFollow3D" parent="Patrol A" unique_id=147070227]
-transform = Transform3D(-0.6259465, 0.023737991, 0.77949935, 0.057277545, 0.9982201, 0.015595025, -0.77775514, 0.05440901, -0.6262017, 16.831875, -15.617379, 232.82979)
+transform = Transform3D(-0.6259465, 0.02373798, 0.77949935, 0.057277545, 0.9982196, 0.015595025, -0.77775514, 0.054408982, -0.6262017, 16.831875, -15.617379, 232.82979)
 progress = 298.65485
 script = ExtResource("13_hybxs")
 pathName = "PathA"
@@ -175,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.179195, 19.016792, 0)
 curve = SubResource("Curve3D_hybxs")
 
 [node name="PathB" type="PathFollow3D" parent="Patrol B" unique_id=963909059]
-transform = Transform3D(-0.9951004, -0.0039002218, -0.09877728, 4.656605e-10, 0.9991995, -0.03945502, 0.09885423, -0.039260965, -0.9943257, -1.2772515, 0.47545436, 9.96851)
+transform = Transform3D(-0.9951004, -0.00390022, -0.09877728, 4.656605e-10, 0.99919903, -0.03945502, 0.09885423, -0.039260946, -0.9943257, -1.2772515, 0.47545436, 9.96851)
 progress = 11.598267
 script = ExtResource("13_hybxs")
 pathName = "PathB"
@@ -189,7 +193,7 @@ transform = Transform3D(0.99983144, 0, 0, 0, 1.4025738, 0, 0, 0, 1.184455, -36.4
 curve = SubResource("Curve3D_v2gmf")
 
 [node name="PathC" type="PathFollow3D" parent="Patrol C" unique_id=911058938]
-transform = Transform3D(0.048869144, 0.07823647, -0.99572814, -0.083248, 0.9937522, 0.07399819, 0.99531764, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
+transform = Transform3D(0.04886912, 0.07823647, -0.99572814, -0.08324796, 0.9937522, 0.07399819, 0.99531716, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
 progress = 66.82306
 script = ExtResource("13_hybxs")
 pathName = "PathC"
@@ -207,7 +211,7 @@ mesh = SubResource("BoxMesh_xigk5")
 [node name="Monster" parent="." unique_id=2059892976 groups=["monster"] instance=ExtResource("15_v2gmf")]
 
 [node name="FlightNavigation3D" parent="." unique_id=1815466678 instance=ExtResource("17_tv8i1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 129.80925, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 106.56352, 0)
 visible = false
 size = Vector3(250, 250, 250)
 sparse_voxel_octree = ExtResource("18_0vlqb")
