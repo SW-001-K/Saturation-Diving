@@ -12,13 +12,14 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="." unique_id=90025853]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
+anchor_left = 0.693
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 873.0
-offset_top = 505.0
-offset_right = -90.0
-offset_bottom = -92.0
+offset_left = 71.664
+offset_top = 504.0
+offset_right = -93.0
+offset_bottom = -93.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_mo16f")

@@ -173,7 +173,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.179195, 19.016792, 0)
 curve = SubResource("Curve3D_hybxs")
 
 [node name="PathB" type="PathFollow3D" parent="Patrol B" unique_id=963909059]
-transform = Transform3D(-0.9951004, -0.0039001976, -0.09877728, 4.656605e-10, 0.9991933, -0.03945502, 0.09885423, -0.039260723, -0.9943257, -1.2772515, 0.47545436, 9.96851)
+transform = Transform3D(-0.9951004, -0.003900197, -0.09877728, 4.656605e-10, 0.9991932, -0.03945502, 0.09885423, -0.039260715, -0.9943257, -1.2772515, 0.47545436, 9.96851)
 progress = 11.598267
 script = ExtResource("13_hybxs")
 pathName = "PathB"
@@ -187,7 +187,7 @@ transform = Transform3D(0.99983144, 0, 0, 0, 1.4025738, 0, 0, 0, 1.184455, -36.4
 curve = SubResource("Curve3D_v2gmf")
 
 [node name="PathC" type="PathFollow3D" parent="Patrol C" unique_id=911058938]
-transform = Transform3D(0.048868842, 0.07823647, -0.99572814, -0.08324748, 0.9937522, 0.07399819, 0.99531144, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
+transform = Transform3D(0.04886884, 0.07823647, -0.99572814, -0.083247475, 0.9937522, 0.07399819, 0.9953113, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
 progress = 66.82306
 script = ExtResource("13_hybxs")
 pathName = "PathC"
@@ -222,4 +222,4 @@ fov = 68.2
 near = 1.436
 
 [node name="Node3D" parent="Camera3D" unique_id=940384163 instance=ExtResource("23_gtqqq")]
-transform = Transform3D(1.0000002, 0, 0, 3.7252903e-09, 1.0000002, 1.4901161e-08, 0, -2.2351742e-08, 1, 0.9176178, -0.17056036, -1.7086029)
+transform = Transform3D(1.0000004, 0, 0, 3.7252903e-09, 1.0000004, 2.2351742e-08, 0, -2.2351742e-08, 1, 0.4955597, -0.09211111, -0.9227295)

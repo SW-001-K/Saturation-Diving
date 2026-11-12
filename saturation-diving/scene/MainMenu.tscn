@@ -16,17 +16,17 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 121.0
-offset_top = 127.0
-offset_right = -831.0
-offset_bottom = -487.0
+offset_left = 123.0
+offset_top = 125.0
+offset_right = -739.0
+offset_bottom = -483.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lnxie")
-theme_override_font_sizes/font_size = 38
-text = "SUNK COST"
+theme_override_font_sizes/font_size = 45
+text = "SUNKEN COST"
 
-[node name="Label" type="Label" parent="." unique_id=378580114]
+[node name="Play" type="Label" parent="." unique_id=378580114]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,7 +41,7 @@ theme_override_fonts/font = ExtResource("1_lnxie")
 theme_override_font_sizes/font_size = 25
 text = "Play"
 
-[node name="Label2" type="Label" parent="." unique_id=2033735227]
+[node name="Exit" type="Label" parent="." unique_id=2033735227]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -56,7 +56,7 @@ theme_override_fonts/font = ExtResource("1_lnxie")
 theme_override_font_sizes/font_size = 25
 text = "Exit"
 
-[node name="Label3" type="Label" parent="." unique_id=1795648461]
+[node name="Credit" type="Label" parent="." unique_id=1795648461]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -69,7 +69,23 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_lnxie")
 theme_override_font_sizes/font_size = 25
-text = "Credits"
+text = "CREDITS"
+
+[node name="Version" type="Label" parent="." unique_id=971484902]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.80200005
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 62.095947
+offset_top = 598.0
+offset_right = -34.0
+offset_bottom = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lnxie")
+theme_override_font_sizes/font_size = 25
+text = "VERSION 0"
 
 [node name="CameraShader" parent="." unique_id=1195498313 instance=ExtResource("2_sks6p")]
 layout_mode = 1
