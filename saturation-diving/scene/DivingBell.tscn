@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://bcum5r088rlub"]
+
+[ext_resource type="PackedScene" uid="uid://1mxrim4tsdae" path="res://assets/3D/Diving Bell.glb" id="1_jinvs"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ff24q"]
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(1.0039216, 0, 0, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_ld21q"]
+material = SubResource("StandardMaterial3D_ff24q")
+radius = 0.1
+height = 0.2
+
+[node name="Diving Bell" unique_id=396230714 instance=ExtResource("1_jinvs")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="9" unique_id=1962233928]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1373849, 1.7794645, -0.3101313)
+light_color = Color(0.5546919, 0, 0.09683072, 1)
+light_energy = 4.0
+light_indirect_energy = 30.0
+light_volumetric_fog_energy = 500.0
+light_size = 1.0
+omni_range = 400.0
+omni_attenuation = 2.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="10" unique_id=188340921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1372817, 1.7340095, -0.25515294)
+mesh = SubResource("SphereMesh_ld21q")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." index="11" unique_id=860007430]
+transform = Transform3D(1, 0, 0, 0, 0.01032759, -0.9999467, 0, 0.9999467, 0.01032759, 0, 2.548893, 0)
+visible = false
+light_color = Color(1, 0.16127697, 0.26052964, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 3.0
+light_size = 3.67

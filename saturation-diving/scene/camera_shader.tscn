@@ -4,12 +4,12 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_q4tbf"]
 shader = ExtResource("1_xolm2")
-shader_parameter/aberration_strength = 3.0
+shader_parameter/aberration_strength = 1.0000000475
 shader_parameter/blur_strength = 2.0
-shader_parameter/noise_strength = 0.048
+shader_parameter/noise_strength = 0.030000001425
 shader_parameter/vignette_strength = 0.78
 shader_parameter/scanline_strength = 0.016
-shader_parameter/distortion_strength = 0.1
+shader_parameter/distortion_strength = 0.10000000475
 shader_parameter/ghost_strength = 0.12
 shader_parameter/flicker_strength = 0.005
 
@@ -29,3 +29,5 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -5.0
 offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2

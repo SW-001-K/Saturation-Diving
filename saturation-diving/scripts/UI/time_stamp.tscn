@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bu1154d1r6mt8"]
+
+[ext_resource type="FontFile" uid="uid://d2arey5smrcx3" path="res://assets/Font/VCR_OSD_MONO_1.001.ttf" id="1_mo16f"]
+
+[node name="TimeStamp" type="Control" unique_id=900060155]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=90025853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 873.0
+offset_top = 505.0
+offset_right = -90.0
+offset_bottom = -92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_mo16f")
+theme_override_font_sizes/font_size = 27
+text = "PM 04:11:30
+Nov. 12 2026"

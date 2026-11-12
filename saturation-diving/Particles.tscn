@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://b5lpcyr030fkw"]
+
+[sub_resource type="Curve" id="Curve_1xyps"]
+_data = [Vector2(0.13245034, 0.5960265), 0.0, 0.0, 0, 0, Vector2(0.53642386, 0.5099337), 0.0, 0.0, 0, 0, Vector2(0.910596, 0.5761589), 0.0, 0.0, 0, 0, Vector2(1, 0.026489973), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_c1vma"]
+curve = SubResource("Curve_1xyps")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ld21q"]
+emission_shape = 1
+emission_sphere_radius = 4.01
+inherit_velocity_ratio = 0.392
+gravity = Vector3(0, 0.1, 0)
+radial_accel_min = -2.2351742e-06
+radial_accel_max = 0.49999776
+tangential_accel_min = -2.2351742e-06
+tangential_accel_max = 0.49999776
+damping_max = 0.5
+scale_min = 0.01
+scale_max = 0.01
+scale_curve = SubResource("CurveTexture_c1vma")
+turbulence_enabled = true
+turbulence_noise_strength = 2.59
+collision_mode = 2
+collision_use_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ff24q"]
+disable_fog = true
+disable_specular_occlusion = true
+albedo_color = Color(0.61257786, 0.6125778, 0.612578, 1)
+metallic = 1.0
+metallic_specular = 0.0
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xigk5"]
+material = SubResource("StandardMaterial3D_ff24q")
+
+[node name="Node3D" type="Node3D" unique_id=940384163]
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="." unique_id=759599903]
+gi_lightmap_texel_scale = 0.01
+amount = 200
+lifetime = 7.0
+randomness = 0.31
+collision_base_size = 10.5
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ld21q")
+draw_pass_1 = SubResource("SphereMesh_xigk5")

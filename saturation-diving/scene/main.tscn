@@ -19,25 +19,23 @@
 [ext_resource type="PackedScene" uid="uid://vd11jcof7n4l" path="res://scene/Monste.tscn" id="15_v2gmf"]
 [ext_resource type="PackedScene" uid="uid://ckxcpysd56k6x" path="res://src/flight_navigation_3d.tscn" id="17_tv8i1"]
 [ext_resource type="Resource" uid="uid://sc18ckshygaf" path="res://scene/main_FlightNavigation3D.res" id="18_0vlqb"]
+[ext_resource type="PackedScene" uid="uid://c67kxkevjndel" path="res://terrain_3.tscn" id="20_gjnwh"]
+[ext_resource type="PackedScene" uid="uid://bu1154d1r6mt8" path="res://scripts/UI/time_stamp.tscn" id="21_fdqew"]
+[ext_resource type="PackedScene" uid="uid://bcum5r088rlub" path="res://scene/DivingBell.tscn" id="22_0d4pv"]
+[ext_resource type="PackedScene" uid="uid://b5lpcyr030fkw" path="res://Particles.tscn" id="23_gtqqq"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
 sdfgi_enabled = true
 glow_enabled = true
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.222
-volumetric_fog_albedo = Color(0.02826115, 0.15020889, 0.19509584, 1)
+volumetric_fog_density = 0.15
+volumetric_fog_albedo = Color(0.011764706, 0.09411765, 0.12941177, 1)
 volumetric_fog_emission = Color(0.09620481, 0.09620472, 0.09620469, 1)
 
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ff24q"]
 
 [sub_resource type="Compositor" id="Compositor_ps1l2"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_p1hux"]
-points = PackedVector3Array(-250, 0, -250, -250, 0, 250, 250, 0, -250, 250, 0, 250)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_xigk5"]
-size = Vector2(300, 300)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ld21q"]
 size = Vector3(60, 30, 20)
@@ -79,6 +77,9 @@ point_count = 6
 [node name="Node3D" type="Node3D" unique_id=1597984316]
 script = ExtResource("1_0ha60")
 
+[node name="TimeStamp" parent="." unique_id=900060155 instance=ExtResource("21_fdqew")]
+mouse_filter = 2
+
 [node name="CameraShader" parent="." unique_id=1195498313 instance=ExtResource("2_0vlqb")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=918976540]
@@ -88,10 +89,11 @@ compositor = SubResource("Compositor_ps1l2")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1608129238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.371645, 0)
-light_color = Color(0, 0.8959685, 0.8990491, 1)
-light_energy = 7.706
-light_volumetric_fog_energy = 1.075
-light_angular_distance = 3.45
+light_color = Color(0.12010359, 0.39783683, 0.49085587, 1)
+light_energy = 6.0
+light_volumetric_fog_energy = 2.0
+light_angular_distance = 3.65
+shadow_enabled = true
 
 [node name="Diver" parent="." unique_id=2127073738 groups=["player"] instance=ExtResource("2_v0l8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.0094805, 47.12206)
@@ -107,19 +109,10 @@ objectName = "Log2"
 [node name="Interaction Panel" parent="." unique_id=978939956 instance=ExtResource("4_brvut")]
 mouse_filter = 2
 
-[node name="Control" parent="." unique_id=802342564 instance=ExtResource("6_4j5ol")]
+[node name="Debugger" parent="." unique_id=802342564 instance=ExtResource("6_4j5ol")]
 
 [node name="Oxygen Bar" parent="." unique_id=901570163 instance=ExtResource("7_p1hux")]
 mouse_filter = 2
-
-[node name="Floor" type="StaticBody3D" parent="." unique_id=355060166]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=558595842]
-shape = SubResource("ConvexPolygonShape3D_p1hux")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=885407412]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87773514, 0.022659302, -0.9209521)
-mesh = SubResource("PlaneMesh_xigk5")
 
 [node name="Ship" type="StaticBody3D" parent="." unique_id=1848549469]
 transform = Transform3D(0.9094634, -0.12236495, -0.39737016, 0.02873654, 0.9719266, -0.23352262, 0.41478956, 0.20096128, 0.8874482, -25.471283, -2.8493009, -9.03397)
@@ -139,6 +132,7 @@ shape = SubResource("BoxShape3D_ld21q")
 
 [node name="Bell" type="StaticBody3D" parent="." unique_id=1608597587]
 transform = Transform3D(0.9999724, 0.007130857, 0.0020820496, -0.007134794, 0.99997276, 0.0018900635, -0.0020685184, -0.0019048627, 0.99999607, 0, 0, 85.699005)
+visible = false
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("9_b5f6u")
@@ -165,7 +159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14636993, 49.515484, -158.
 curve = SubResource("Curve3D_wscrc")
 
 [node name="PathA" type="PathFollow3D" parent="Patrol A" unique_id=147070227]
-transform = Transform3D(-0.6259465, 0.02373798, 0.77949935, 0.057277545, 0.9982196, 0.015595025, -0.77775514, 0.054408982, -0.6262017, 16.831875, -15.617379, 232.82979)
+transform = Transform3D(-0.6259465, 0.023737978, 0.77949935, 0.057277545, 0.9982196, 0.015595025, -0.77775514, 0.05440898, -0.6262017, 16.831875, -15.617379, 232.82979)
 progress = 298.65485
 script = ExtResource("13_hybxs")
 pathName = "PathA"
@@ -179,7 +173,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.179195, 19.016792, 0)
 curve = SubResource("Curve3D_hybxs")
 
 [node name="PathB" type="PathFollow3D" parent="Patrol B" unique_id=963909059]
-transform = Transform3D(-0.9951004, -0.00390022, -0.09877728, 4.656605e-10, 0.99919903, -0.03945502, 0.09885423, -0.039260946, -0.9943257, -1.2772515, 0.47545436, 9.96851)
+transform = Transform3D(-0.9951004, -0.0039001976, -0.09877728, 4.656605e-10, 0.9991933, -0.03945502, 0.09885423, -0.039260723, -0.9943257, -1.2772515, 0.47545436, 9.96851)
 progress = 11.598267
 script = ExtResource("13_hybxs")
 pathName = "PathB"
@@ -193,7 +187,7 @@ transform = Transform3D(0.99983144, 0, 0, 0, 1.4025738, 0, 0, 0, 1.184455, -36.4
 curve = SubResource("Curve3D_v2gmf")
 
 [node name="PathC" type="PathFollow3D" parent="Patrol C" unique_id=911058938]
-transform = Transform3D(0.04886912, 0.07823647, -0.99572814, -0.08324796, 0.9937522, 0.07399819, 0.99531716, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
+transform = Transform3D(0.048868842, 0.07823647, -0.99572814, -0.08324748, 0.9937522, 0.07399819, 0.99531144, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
 progress = 66.82306
 script = ExtResource("13_hybxs")
 pathName = "PathC"
@@ -215,3 +209,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 106.56352, 0)
 visible = false
 size = Vector3(250, 250, 250)
 sparse_voxel_octree = ExtResource("18_0vlqb")
+
+[node name="Terrain3" parent="." unique_id=442951556 instance=ExtResource("20_gjnwh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 112.54531, 0)
+
+[node name="Diving Bell" parent="." unique_id=396230714 instance=ExtResource("22_0d4pv")]
+transform = Transform3D(0.14056751, 0, -1.4933991, 0, 1.5, 0, 1.4933991, 0, 0.14056751, 0, 1.5569248, 95.05745)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1262265705]
+transform = Transform3D(-0.88194716, -0.041335877, -0.46953228, 0.004857599, 0.99529725, -0.09674654, 0.47132328, -0.08760614, -0.87759876, -0.84166145, 3.132677, 83.35904)
+fov = 68.2
+near = 1.436
+
+[node name="Node3D" parent="Camera3D" unique_id=940384163 instance=ExtResource("23_gtqqq")]
+transform = Transform3D(1.0000002, 0, 0, 3.7252903e-09, 1.0000002, 1.4901161e-08, 0, -2.2351742e-08, 1, 0.9176178, -0.17056036, -1.7086029)

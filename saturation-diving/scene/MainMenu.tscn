@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dqeshdsmeauo1"]
+
+[ext_resource type="FontFile" uid="uid://d2arey5smrcx3" path="res://assets/Font/VCR_OSD_MONO_1.001.ttf" id="1_lnxie"]
+[ext_resource type="PackedScene" uid="uid://cfa6746r6i4hr" path="res://scene/camera_shader.tscn" id="2_sks6p"]
+
+[node name="Control" type="Control" unique_id=83567738]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="." unique_id=1296789622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 121.0
+offset_top = 127.0
+offset_right = -831.0
+offset_bottom = -487.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lnxie")
+theme_override_font_sizes/font_size = 38
+text = "SUNK COST"
+
+[node name="Label" type="Label" parent="." unique_id=378580114]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = 263.0
+offset_right = -968.0
+offset_bottom = -362.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lnxie")
+theme_override_font_sizes/font_size = 25
+text = "Play"
+
+[node name="Label2" type="Label" parent="." unique_id=2033735227]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = 296.0
+offset_right = -968.0
+offset_bottom = -329.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lnxie")
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+
+[node name="Label3" type="Label" parent="." unique_id=1795648461]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 26.0
+offset_top = 599.0
+offset_right = -1023.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_lnxie")
+theme_override_font_sizes/font_size = 25
+text = "Credits"
+
+[node name="CameraShader" parent="." unique_id=1195498313 instance=ExtResource("2_sks6p")]
+layout_mode = 1

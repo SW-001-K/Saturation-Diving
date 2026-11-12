@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://342a6ujjiqq4"]
+
+[ext_resource type="PackedScene" uid="uid://c4v1rbl52iojm" path="res://assets/3D/Corals/thai_beach_coral_ufnxefkfa_low.glb" id="1_7p3bh"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_n2msn"]
+points = PackedVector3Array(9.846125, 3.0796056, 6.8843575, 2.01986, -2.3346968, -10.871725, -16.027355, 0.64009935, 3.033422, 0.53241915, -9.233074, 7.4202833, 0.5278541, 10.403637, -2.4213655, 16.098072, -2.8713698, -0.48058107, -6.905987, 1.6261278, 9.946979, -2.9117196, -9.699666, -4.897287, -12.922018, -7.8394985, 7.500138, -12.789723, -2.3273082, -4.913811, 11.47442, 7.095946, -4.450109, 10.882622, -6.267135, -6.3841057, 8.436164, -6.771587, 8.412545, -1.8624101, 6.31935, -7.5848103, 2.4722607, 8.902958, 4.4020133, -15.132626, 3.2776577, 3.16073, 7.938321, -9.23658, 4.9549294, -0.45165086, -4.80614, 10.900626, -14.981946, -6.6472993, 1.4739052, 9.930941, 3.5971067, -7.8904853, 14.246644, 2.5873966, 3.4471793, 3.0133708, -9.7758255, -6.4237056, -13.298262, 2.6087956, -2.9438667, -3.8966224, -6.2578826, -8.838149, 14.900301, -5.309565, 3.485821, 9.396583, 8.50682, 0.5106863, 5.507501, -5.826275, -10.418784, -6.2963634, 7.4535613, 3.921857, -1.911982, 4.0394497, 9.289024, -11.352026, -3.3259308, 9.432392, -10.899118, -9.308686, 5.9890065, 2.9814444, 6.5143285, -8.316928)
+
+[node name="Rock3" unique_id=1087896132 instance=ExtResource("1_7p3bh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Thai_Beach_Coral_ufnxefkfa_Low_fbx/RootNode/ufnxefkfa_LOD0_TIER3_000/ufnxefkfa_LOD0_TIER3_000_MatID_1_0" parent_id_path=PackedInt32Array(22353203) index="0" unique_id=1059601382]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Thai_Beach_Coral_ufnxefkfa_Low_fbx/RootNode/ufnxefkfa_LOD0_TIER3_000/ufnxefkfa_LOD0_TIER3_000_MatID_1_0/StaticBody3D" index="0" unique_id=752313841]
+shape = SubResource("ConvexPolygonShape3D_n2msn")

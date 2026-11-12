@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c2gy16ylgpm1a"]
+
+[ext_resource type="PackedScene" uid="uid://831cedqjirab" path="res://assets/3D/Grass/standard/ui2oagjia_tier_3_nonUE.gltf" id="1_xupdr"]
+
+[node name="ui2oagjia_tier_3_nonUE" unique_id=25868069 instance=ExtResource("1_xupdr")]
+
+[node name="SM_ui2oagjia_VarA_LOD1" parent="." index="1" unique_id=2071178609]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0.8187256, 0, -0.82173157)
+
+[node name="SM_ui2oagjia_VarA_LOD2" parent="." index="2" unique_id=1280086560]
+transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0.5221329)

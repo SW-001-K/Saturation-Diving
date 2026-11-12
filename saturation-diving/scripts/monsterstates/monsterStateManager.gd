@@ -48,7 +48,7 @@ func receiveSignal(signalName):
 			
 		#if signalName == "alert" && distance > alertRange:
 			#getNodeNames("patrol").Change_State("transition")
-		
+		#
 		#elif signalName == "alert" && distance < alertRange:
 			#getNodeNames("patrol").Change_State("pursue")
 			

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://c0lfqviilfjp2"]
+
+[ext_resource type="PackedScene" uid="uid://ce20h432n67ic" path="res://assets/3D/Corals/thai_beach_coral_ufzleexfa_low.glb" id="1_gxw6a"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gxw6a"]
+points = PackedVector3Array(6.027146, -0.6377176, 2.6182845, 5.3527246, -0.6498903, 3.6344888, -2.219427, 2.993537, -0.4487989, 0.4621197, -1.2412599, -5.775768, -3.838889, -2.125987, 5.237573, -1.3698211, 0.95973843, 6.8853135, -3.0146174, -3.1549785, 2.1509616, 3.52645, -2.5566387, -1.4123151, 2.885933, 1.4415238, 5.572682, 2.540473, 0.54826677, -3.1971023, -5.4685383, -1.6469969, 4.4624, -5.278867, -1.0969956, -3.403392, 5.8325634, 0.13679509, 1.7396713, 1.7888278, -2.1608434, 3.5600975, -1.1637532, -0.2740522, 7.0916033, -2.6408875, -1.8061637, -4.145998, -1.654433, -0.4444407, -5.2465396, 3.3634956, -1.0969956, -3.1971023, -6.3079567, -1.0969956, -2.169521, 1.7973908, -2.5554984, -2.564928, 0.6883599, 1.5772582, 6.474023, -4.275134, -0.24884774, 4.6626725, 3.3756814, 1.4106734, 2.7082472, 6.093653, -1.0336608, 2.2523909, -5.6001296, -0.059681233, -1.5730278, -0.4788912, -0.056940492, -5.000442, 3.9990065, 0.91757363, 5.2188516, -4.142158, -2.7429867, 1.2703967, 4.2830133, -2.3588085, -1.2170426, -1.8070421, 2.9452527, 0.50580025, 1.9222693, -1.5084673, -4.8448424, 5.2609496, -1.2147542, 3.195981)
+
+[node name="Sketchfab_Scene" unique_id=712674701 instance=ExtResource("1_gxw6a")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Thai_Beach_Coral_ufzleexfa_Low_fbx/RootNode/ufzleexfa_LOD0_TIER3_000" parent_id_path=PackedInt32Array(251027287) index="1" unique_id=1211973484]
+transform = Transform3D(100, 0, 0, 0, 100, 2.220446e-14, 0, -2.220446e-14, 100, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Thai_Beach_Coral_ufzleexfa_Low_fbx/RootNode/ufzleexfa_LOD0_TIER3_000/StaticBody3D" index="0" unique_id=1226099204]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, -2.220446e-18, 0, 2.220446e-18, 0.01, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_gxw6a")

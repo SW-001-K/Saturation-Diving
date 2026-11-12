@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://c67kxkevjndel"]
+
+[ext_resource type="PackedScene" uid="uid://c56ab7lhtu4q" path="res://assets/3D/Terrain3.glb" id="1_a8waa"]
+[ext_resource type="Texture2D" uid="uid://ikosemtm81ni" path="res://assets/3D/textures/sand_sgfodj1a_2k/Sand_sgfodj1a_2K_BaseColor.jpg" id="2_0v1ko"]
+[ext_resource type="Texture2D" uid="uid://0ewdxt1frln" path="res://assets/3D/textures/sand_sgfodj1a_2k/Sand_sgfodj1a_2K_AO.jpg" id="3_dy803"]
+[ext_resource type="Texture2D" uid="uid://cllhv7vavm34p" path="res://assets/3D/textures/sand_sgfodj1a_2k/Sand_sgfodj1a_2K_Normal.jpg" id="4_0v1ko"]
+[ext_resource type="Texture2D" uid="uid://c848wbu7n358t" path="res://assets/3D/textures/sand_sgfodj1a_2k/Sand_sgfodj1a_2K_Roughness.jpg" id="5_ltdj6"]
+[ext_resource type="PackedScene" uid="uid://dg01lngc6cpun" path="res://scene/rock1.tscn" id="6_dy803"]
+[ext_resource type="PackedScene" uid="uid://bcum5r088rlub" path="res://scene/DivingBell.tscn" id="6_mbrdk"]
+[ext_resource type="PackedScene" uid="uid://c0lfqviilfjp2" path="res://scene/Rock2.tscn" id="7_ltdj6"]
+[ext_resource type="PackedScene" uid="uid://342a6ujjiqq4" path="res://scene/rock3.tscn" id="9_8wspq"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_6wcii"]
+normal_texture = ExtResource("4_0v1ko")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fspct"]
+albedo_texture = ExtResource("2_0v1ko")
+metallic_specular = 0.0
+roughness_texture = ExtResource("5_ltdj6")
+roughness_texture_channel = 3
+emission_energy_multiplier = 0.59
+normal_enabled = true
+normal_scale = 0.2
+normal_texture = ExtResource("4_0v1ko")
+ao_light_affect = 0.21
+ao_texture = ExtResource("3_dy803")
+ao_texture_channel = 4
+heightmap_scale = -2.092
+heightmap_texture = SubResource("CanvasTexture_6wcii")
+uv1_scale = Vector3(0.5, 0.5, 0.5)
+uv1_triplanar = true
+
+[node name="Terrain3" unique_id=442951556 instance=ExtResource("1_a8waa")]
+
+[node name="RootNode" parent="." index="0" unique_id=830676869]
+transform = Transform3D(0.99421865, 0, 0, 0, 0.99421865, 0, 0, 0, 0.99421865, -0.224617, -45.430798, -2.1347752)
+surface_material_override/0 = SubResource("StandardMaterial3D_fspct")
+
+[node name="CollisionShape3D" parent="@StaticBody3D@19923" parent_id_path=PackedInt32Array(2112671104) index="0" unique_id=1113109374]
+transform = Transform3D(0.9959966, 0, 0, 0, 0.9959966, 0, 0, 0, 0.9959966, 0, 0, -2.6737976)
+
+[node name="Diving Bell" parent="." index="2" unique_id=396230714 instance=ExtResource("6_mbrdk")]
+transform = Transform3D(0.14000477, 0, -1.4874204, 0, 1.493995, 0, 1.4874204, 0, 0.14000477, 0, -108.69003, 94.676895)
+visible = false
+
+[node name="Rock1" type="Node3D" parent="." index="3" unique_id=1454769618]
+
+[node name="Sketchfab_Scene" parent="Rock1" index="0" unique_id=158816464 instance=ExtResource("6_dy803")]
+transform = Transform3D(70.78169, 0, 0, 0, 70.78169, 0, 0, 0, 70.78169, 0, -113.32449, 0)
+
+[node name="Sketchfab_Scene2" parent="Rock1" index="1" unique_id=902758949 instance=ExtResource("6_dy803")]
+transform = Transform3D(70.78169, 0, 0, 0, 70.78169, 0, 0, 0, 70.78169, -71.69226, -112.93906, 44.66028)
+
+[node name="Sketchfab_Scene3" parent="Rock1" index="2" unique_id=877216290 instance=ExtResource("6_dy803")]
+transform = Transform3D(146.82745, 0, 0, 0, 146.82745, 0, 0, 0, 146.82745, 43.3256, -112.034515, 44.66028)
+
+[node name="Sketchfab_Scene5" parent="Rock1" index="3" unique_id=2101527606 instance=ExtResource("6_dy803")]
+transform = Transform3D(125.06564, 0, 0, 0, 125.06564, 0, 0, 0, 125.06564, 3.7765274, -112.92734, 84.97119)
+
+[node name="Sketchfab_Scene6" parent="Rock1" index="4" unique_id=1501356441 instance=ExtResource("6_dy803")]
+transform = Transform3D(103.46367, 0, 70.261536, 0, 125.06564, 0, -70.261536, 0, 103.46367, -6.9411545, -112.92734, 98.73035)
+
+[node name="Sketchfab_Scene4" parent="Rock1" index="5" unique_id=695311622 instance=ExtResource("6_dy803")]
+transform = Transform3D(117.87765, 0, 87.53946, 0, 146.82744, 0, -87.53946, 0, 117.87765, 22.78495, -112.93906, -20.957947)
+
+[node name="Rock2" type="Node3D" parent="." index="4" unique_id=1641139156]
+
+[node name="Sketchfab_Scene" parent="Rock2" index="0" unique_id=712674701 instance=ExtResource("7_ltdj6")]
+transform = Transform3D(247.94704, 0, 0, 0, 247.94704, 0, 0, 0, 247.94704, -32.582397, -113.3573, 0)
+
+[node name="Sketchfab_Scene2" parent="Rock2" index="1" unique_id=2129682286 instance=ExtResource("7_ltdj6")]
+transform = Transform3D(-24.245724, 0, -246.75877, 0, 247.94707, 0, 246.75877, 0, -24.245724, -32.582397, -113.3573, -15.626953)
+
+[node name="Sketchfab_Scene3" parent="Rock2" index="2" unique_id=878816293 instance=ExtResource("7_ltdj6")]
+transform = Transform3D(-24.889772, 0, -253.3135, 0, 254.53337, 0, 253.3135, 0, -24.889772, -18.764475, -109.834595, 69.88289)
+
+[node name="Sketchfab_Scene6" parent="Rock2" index="3" unique_id=142601677 instance=ExtResource("7_ltdj6")]
+transform = Transform3D(62.77826, 0, 246.67006, 0, 254.53336, 0, -246.67006, 0, 62.77826, 6.962324, -109.834595, 111.43434)
+
+[node name="Sketchfab_Scene5" parent="Rock2" index="4" unique_id=62235510 instance=ExtResource("7_ltdj6")]
+transform = Transform3D(-31.349232, 0, -319.0541, 0, 320.59055, 0, 319.0541, 0, -31.349232, 101.747955, -108.42969, 69.88289)
+
+[node name="Sketchfab_Scene4" parent="Rock2" index="5" unique_id=869107928 instance=ExtResource("7_ltdj6")]
+transform = Transform3D(-31.349232, 0, -319.0541, 0, 320.59055, 0, 319.0541, 0, -31.349232, -89.79015, -109.834595, 69.88289)
+
+[node name="Rock3" parent="." index="5" unique_id=1087896132 instance=ExtResource("9_8wspq")]
+transform = Transform3D(33.58686, 0, 0, 0, 33.58686, 0, 0, 0, 33.58686, 2.767685, -111.43823, 100.547646)
+
+[node name="Rock3" parent="Rock3" index="1" unique_id=1147350901 instance=ExtResource("9_8wspq")]
+transform = Transform3D(-0.11782807, 0, 0.9930336, 0, 0.99999964, 0, -0.9930336, 0, -0.11782807, -0.2487937, 0, -1.2145718)

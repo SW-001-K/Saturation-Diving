@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dg01lngc6cpun"]
+
+[ext_resource type="PackedScene" uid="uid://bm3sxsntmnxn3" path="res://assets/3D/Corals/coral_stone_wfbmej3r_low.glb" id="1_ju583"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1osqn"]
+points = PackedVector3Array(0.94493383, 0.17389297, 4.080945, -2.2170079, -0.0029754916, -4.899175, -2.3887987, -0.71075404, -4.714048, 5.9761434, -0.6905695, -0.8066629, -4.57026, -2.2398355, 1.7462344, -1.7816656, 2.3986146, -0.11682902, 4.1535335, 1.287667, -2.3361928, 3.9929447, -2.0251417, -0.7934126, -5.1274204, -0.38228524, 1.7462344, 1.1189182, 2.0397167, 2.9353094, -0.67130613, -1.4965318, -4.9355016, 0.6154045, -1.0455595, 4.2399015, -1.9705698, 1.65861, -4.19298, 5.7701316, -0.35912302, 1.1293664, -1.1600006, 0.5294257, 4.5189333, -5.1604013, -1.2260528, -0.4644777, 3.570387, -0.52064925, -3.2431588, -1.3084941, -1.5772741, 3.9130142, -4.941313, -2.2398355, 0.818804, -1.7856255, 0.3591282, -5.121373, 3.226485, 0.91577893, 3.0463705, -2.5467584, 1.4050272, -4.1582546, 5.7689743, -0.8914554, 1.1290772, -4.134868, -1.4102467, 2.878575, -2.9285474, -1.0679823, -4.370403, -1.9401766, 1.7051433, 1.7542953, -3.2503474, 0.17389297, -4.333695, 1.1251967, 2.228727, 2.2795978, -1.4190786, 2.3742688, -0.62433136, -2.205373, -0.35483977, 4.297835, 1.1414375, -0.8777192, 4.2672315, -0.94313717, 0.866183, 4.3884234)
+
+[node name="Rock1" unique_id=158816464 instance=ExtResource("1_ju583")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Sketchfab_model/Coral_Stone_wfbmej3r_Low_fbx/RootNode/world_root/wfbmej3r_LOD0_TIER3_000" parent_id_path=PackedInt32Array(1174140998) index="0" unique_id=1000256805]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Sketchfab_model/Coral_Stone_wfbmej3r_Low_fbx/RootNode/world_root/wfbmej3r_LOD0_TIER3_000/StaticBody3D" index="0" unique_id=918112971]
+shape = SubResource("ConvexPolygonShape3D_1osqn")
