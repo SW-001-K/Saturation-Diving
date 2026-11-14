@@ -2,7 +2,7 @@ extends playerstate
 class_name hoverState
 
 
-const SPEED = 100.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 5
 
 # Called when the node enters the scene tree for the first time.

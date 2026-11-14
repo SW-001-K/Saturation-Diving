@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://isl1tcpa2p75"]
+
+[ext_resource type="Script" uid="uid://byrtrlk1jn3m1" path="res://scripts/UI/buttonscript.gd" id="1_1yaya"]
+[ext_resource type="FontFile" uid="uid://d2arey5smrcx3" path="res://assets/Font/VCR_OSD_MONO_1.001.ttf" id="1_pit2g"]
+[ext_resource type="Script" uid="uid://ce6qy4yd1jc6x" path="res://scene/button.gd" id="2_1yaya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ld21q"]
+size = Vector2(86.5, 35)
+
+[node name="Button" type="Control" unique_id=401811237]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1063.0
+offset_bottom = -615.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1yaya")
+buttonText = "Hello"
+
+[node name="Label" type="Label" parent="." unique_id=42400008]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.106000006
+anchor_bottom = 0.055000003
+offset_right = 60.068
+offset_bottom = 20.185
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_pit2g")
+theme_override_font_sizes/font_size = 25
+text = "Test"
+script = ExtResource("2_1yaya")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=736418384]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1556156002]
+position = Vector2(43, 16.5)
+shape = SubResource("RectangleShape2D_ld21q")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

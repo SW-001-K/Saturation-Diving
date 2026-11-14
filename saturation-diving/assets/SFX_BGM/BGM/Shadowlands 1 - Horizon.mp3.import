@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cakbbus8txibe"
+path="res://.godot/imported/Shadowlands 1 - Horizon.mp3-3c71dfee3f6cc0a7f7812f2eac9ec4aa.mp3str"
+
+[deps]
+
+source_file="res://assets/SFX_BGM/BGM/Shadowlands 1 - Horizon.mp3"
+dest_files=["res://.godot/imported/Shadowlands 1 - Horizon.mp3-3c71dfee3f6cc0a7f7812f2eac9ec4aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
