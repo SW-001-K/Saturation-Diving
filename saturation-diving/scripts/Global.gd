@@ -15,6 +15,10 @@ var nextPath
 
 var diverPosition
 
+#Object states 
+var cdPlayer : bool #for sounds
+
+
 
 
 

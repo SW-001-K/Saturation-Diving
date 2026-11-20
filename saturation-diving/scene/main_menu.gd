@@ -30,7 +30,7 @@ func _ready() -> void:
 	triPlay.hide()
 	triExit.hide()
 	
-	#BGM.play()
+	BGM.play()
 	
 	pass
 	
@@ -54,7 +54,7 @@ func playButton():
 	playClickSound()
 	await get_tree().create_timer(1.1).timeout 
 	BGM.stop()
-	get_tree().change_scene_to_file("res://scene/Habitat.tscn")
+	get_tree().change_scene_to_file("res://scene/opening_cutscene.tscn")
 	pass
 	
 func exitButton():

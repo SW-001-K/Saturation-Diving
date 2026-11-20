@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dvwwd8pnwbwj1"]
+
+[ext_resource type="PackedScene" uid="uid://culvircixxc60" path="res://scene/opening_control.tscn" id="1_8hoop"]
+
+[node name="OpeningCutscene" type="Node3D" unique_id=1096596063]
+
+[node name="OpeningControl" parent="." unique_id=661443760 instance=ExtResource("1_8hoop")]

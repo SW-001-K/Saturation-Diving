@@ -4,7 +4,7 @@ var Day
 #This is the Day Manager, It manages Days 
 
 func _ready() -> void:
-	Global.dayEnded = true
+	Global.dayEnded = false
 	Global.dayEnd.connect(Manager)
 
 func Manager(action):

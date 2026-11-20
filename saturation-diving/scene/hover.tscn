@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cipraq0etkiyw"]
+
+[ext_resource type="AudioStream" uid="uid://dagv8fhyaf74l" path="res://assets/SFX_BGM/SFX/UI/hover.mp3" id="1_tvkso"]
+
+[node name="Hover" type="AudioStreamPlayer" unique_id=2004298816]
+stream = ExtResource("1_tvkso")
+volume_db = 2.0

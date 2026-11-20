@@ -15,14 +15,14 @@
 [ext_resource type="PackedScene" uid="uid://dtd34rcxtu4d8" path="res://scene/DayDebugger.tscn" id="11_wscrc"]
 [ext_resource type="Script" uid="uid://cfq0pn2q6yi1s" path="res://scripts/Day Manager.gd" id="12_mswub"]
 [ext_resource type="Script" uid="uid://coyxt2si1f62i" path="res://scripts/monsterstates/pathfollower.gd" id="13_hybxs"]
-[ext_resource type="PackedScene" uid="uid://b5uh28pkowt6b" path="res://path.tscn" id="13_mswub"]
+[ext_resource type="PackedScene" uid="uid://b5uh28pkowt6b" path="res://scene/path.tscn" id="13_mswub"]
 [ext_resource type="PackedScene" uid="uid://vd11jcof7n4l" path="res://scene/Monste.tscn" id="15_v2gmf"]
 [ext_resource type="PackedScene" uid="uid://ckxcpysd56k6x" path="res://src/flight_navigation_3d.tscn" id="17_tv8i1"]
 [ext_resource type="Resource" uid="uid://sc18ckshygaf" path="res://scene/main_FlightNavigation3D.res" id="18_0vlqb"]
-[ext_resource type="PackedScene" uid="uid://c67kxkevjndel" path="res://terrain_3.tscn" id="20_gjnwh"]
+[ext_resource type="PackedScene" uid="uid://c67kxkevjndel" path="res://scene/terrain_3.tscn" id="20_gjnwh"]
 [ext_resource type="PackedScene" uid="uid://bu1154d1r6mt8" path="res://scripts/UI/time_stamp.tscn" id="21_fdqew"]
 [ext_resource type="PackedScene" uid="uid://bcum5r088rlub" path="res://scene/DivingBell.tscn" id="22_0d4pv"]
-[ext_resource type="PackedScene" uid="uid://b5lpcyr030fkw" path="res://Particles.tscn" id="23_gtqqq"]
+[ext_resource type="PackedScene" uid="uid://b5lpcyr030fkw" path="res://scene/Particles.tscn" id="23_gtqqq"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
@@ -173,7 +173,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.179195, 19.016792, 0)
 curve = SubResource("Curve3D_hybxs")
 
 [node name="PathB" type="PathFollow3D" parent="Patrol B" unique_id=963909059]
-transform = Transform3D(-0.9951004, -0.003900197, -0.09877728, 4.656605e-10, 0.9991932, -0.03945502, 0.09885423, -0.039260715, -0.9943257, -1.2772515, 0.47545436, 9.96851)
+transform = Transform3D(-0.9951004, -0.0039001969, -0.09877728, 4.656605e-10, 0.99919313, -0.03945502, 0.09885423, -0.039260715, -0.9943257, -1.2772515, 0.47545436, 9.96851)
 progress = 11.598267
 script = ExtResource("13_hybxs")
 pathName = "PathB"
@@ -187,7 +187,7 @@ transform = Transform3D(0.99983144, 0, 0, 0, 1.4025738, 0, 0, 0, 1.184455, -36.4
 curve = SubResource("Curve3D_v2gmf")
 
 [node name="PathC" type="PathFollow3D" parent="Patrol C" unique_id=911058938]
-transform = Transform3D(0.04886884, 0.07823647, -0.99572814, -0.083247475, 0.9937522, 0.07399819, 0.9953113, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
+transform = Transform3D(0.048868835, 0.07823647, -0.99572814, -0.08324747, 0.9937522, 0.07399819, 0.99531126, 0.079275735, 0.05507848, 15.761518, -0.21007752, 4.960362)
 progress = 66.82306
 script = ExtResource("13_hybxs")
 pathName = "PathC"

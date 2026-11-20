@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dqeshdsmeauo1" path="res://scene/MainMenu.tscn" id="7_0b5l5"]
 [ext_resource type="PackedScene" uid="uid://b0fdgf5nd6csp" path="res://src/voxelization_target.tscn" id="11_tk5il"]
 [ext_resource type="Script" uid="uid://bagb8utty5kqb" path="res://scripts/interactions/bell.gd" id="12_rbhja"]
-[ext_resource type="PackedScene" uid="uid://c67kxkevjndel" path="res://terrain_3.tscn" id="21_eehj5"]
+[ext_resource type="PackedScene" uid="uid://c67kxkevjndel" path="res://scene/terrain_3.tscn" id="21_eehj5"]
 [ext_resource type="PackedScene" uid="uid://bcum5r088rlub" path="res://scene/DivingBell.tscn" id="22_pvaps"]
-[ext_resource type="PackedScene" uid="uid://b5lpcyr030fkw" path="res://Particles.tscn" id="23_l2r0t"]
+[ext_resource type="PackedScene" uid="uid://b5lpcyr030fkw" path="res://scene/Particles.tscn" id="23_l2r0t"]
 
 [sub_resource type="Environment" id="Environment_83xmj"]
 ssao_enabled = true
