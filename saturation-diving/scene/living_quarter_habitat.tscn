@@ -26,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://c8wjl8ck5ruc3" path="res://assets/3D/Living quarter/LivingQuarterHabitat_Speaker Base Color.png" id="21_vyqpj"]
 [ext_resource type="Texture2D" uid="uid://bn66moumnfrwd" path="res://assets/3D/Living quarter/LivingQuarterHabitat_Speaker base Base Color.png" id="22_wcdbr"]
 [ext_resource type="Texture2D" uid="uid://cqusuiyflvjft" path="res://assets/3D/Living quarter/LivingQuarterHabitat_Top Base Color.png" id="23_meffy"]
+[ext_resource type="PackedScene" uid="uid://cyuh7681trfj0" path="res://dvd_player.tscn" id="27_u6tmk"]
+[ext_resource type="Script" uid="uid://kddpria8ld5p" path="res://scene/CDplayer.gd" id="28_vecxh"]
+[ext_resource type="AudioStream" uid="uid://bwoj8gjnnarwl" path="res://assets/SFX_BGM/BGM/alex-productions-sexy-sax.mp3" id="29_8koqu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xigk5"]
 size = Vector3(2.3452072, 0.42880395, 5.2683296)
@@ -552,7 +555,7 @@ shadow_mesh = SubResource("ArrayMesh_k5att")
 size = Vector3(1.1474609, 1.1690674, 3.3668213)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ld21q"]
-size = Vector3(0.4091797, 0.56469727, 1)
+size = Vector3(0.4091797, 0.56469727, 0.7626953)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_epgsu"]
 resource_name = "Material.018"
@@ -1285,6 +1288,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_2mgw5")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ps1l2"]
+size = Vector3(0.57614136, 0.24615479, 0.793396)
+
 [node name="LivingQuarterHabitat" type="Node3D" unique_id=691542745]
 
 [node name="Bed" type="Node3D" parent="." unique_id=1596945376]
@@ -1384,6 +1390,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1652708, -0.09651899, 0.17
 shape = SubResource("BoxShape3D_ff24q")
 
 [node name="Log Machine" type="Node3D" parent="." unique_id=857501065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.20053387)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Log Machine" unique_id=1351321553]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.418716, 4.568316, -6.2334847)
@@ -1394,7 +1401,7 @@ prompt_message = "Hello"
 objectName = "Log Machine"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Log Machine/StaticBody3D" unique_id=2071507950]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104599, 0.20102882, 0.23432302)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0104599, 0.20102882, 0.11567068)
 shape = SubResource("BoxShape3D_ld21q")
 
 [node name="FM maybe?" type="MeshInstance3D" parent="Log Machine" unique_id=53744139]
@@ -1472,3 +1479,25 @@ mesh = SubResource("ArrayMesh_7oaa1")
 [node name="Top" type="MeshInstance3D" parent="Log Machine" unique_id=1281769897]
 transform = Transform3D(0.060920436, 0.20942146, 0.0014261252, -0.20175679, 0.063235715, -4.1183418e-11, -0.00023510645, -0.0008082071, 0.36953554, -2.6879506, 4.809338, -6.1630173)
 mesh = SubResource("ArrayMesh_1qxb7")
+
+[node name="dvd player" parent="." unique_id=1264980284 instance=ExtResource("27_u6tmk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8153338, 4.495788, -7.6230907)
+
+[node name="dvd player" type="StaticBody3D" parent="dvd player" unique_id=1448815283]
+collision_layer = 3
+collision_mask = 15
+script = ExtResource("28_vecxh")
+prompt_message = null
+objectName = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="dvd player/dvd player" unique_id=349095765]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04286194, -0.11807251, -0.007171631)
+visible = false
+shape = SubResource("BoxShape3D_ps1l2")
+
+[node name="jazzBGM" type="AudioStreamPlayer3D" parent="dvd player/dvd player" unique_id=466073186]
+stream = ExtResource("29_8koqu")
+attenuation_model = 3
+volume_db = 1.0
+unit_size = 20.0
+playback_type = 1

@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 offset_left = 33.895996
 offset_top = 0.20800018
 offset_right = -15.0
-offset_bottom = -594.0
+offset_bottom = -345.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -43,3 +43,12 @@ text = "Send Notifications"
 stream = ExtResource("2_pfrp7")
 
 [node name="notifDelay" type="Timer" parent="." unique_id=711376603]
+wait_time = 0.5
+autostart = true
+
+[node name="notifDuration" type="Timer" parent="." unique_id=216876313]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="notifDelay" to="." method="timerDelay"]
+[connection signal="timeout" from="notifDuration" to="." method="timerDuration"]

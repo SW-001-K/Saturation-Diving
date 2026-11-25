@@ -7,6 +7,7 @@ extends Control
 @onready var notifPanel = $notifPanel
 @onready var sendNotif = $sendNotif
 @onready var notifSFX = $notifSound
+var i : int
 
 #signalz 
 signal newThoughts
@@ -24,12 +25,16 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	Display_Notifications()
+
+	pass
+
 	
 
 #Notifications should be its own class 
 func Create_Notification():
-	notifQueue.push_front("Hello")
+	var string = "hello" + str(i)
+	notifQueue.push_front(string)
+	i = i + 1
 	print (notifQueue)
 	pass
 
@@ -38,13 +43,9 @@ func Create_Notification():
 func Display_Notifications():
 	var delay
 	var duration
-
-	while notifQueue[0] != "empty":
-		var notif =  Label.new()
-		notif.text = "Hello"
-		notifQueue.pop_front()
-		notifPanel.add_child(notif)
-		notifSFX.play()
+	#print(notifQueue)
+	#while notifQueue[0] != "empty":
+		#timer()
 	
 	pass
 
@@ -52,3 +53,24 @@ func Send_Notifications():
 
 	newThoughts.emit()
 	pass
+
+
+func timerDelay() -> void:
+	if notifQueue[0] != "empty":
+		var notif =  Label.new()
+		notif.text = notifQueue[0]
+		notifQueue.pop_front()
+		notifPanel.add_child(notif)
+		notifSFX.play()
+			
+	pass # Replace with function body.
+
+
+func timerDuration() -> void:
+	if notifPanel.get_child_count()!= 0:
+		print("I have a child")
+		var notif = notifPanel.get_child(0)
+		print (notif)
+		notif.queue_free()
+		
+	pass # Replace with function body.

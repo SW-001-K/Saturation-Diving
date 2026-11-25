@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://cyuh7681trfj0"]
+
+[ext_resource type="PackedScene" uid="uid://cvptyjhp3odad" path="res://assets/3D/dvd player.glb" id="1_05us0"]
+
+[node name="dvd player" unique_id=1264980284 instance=ExtResource("1_05us0")]
+
+[node name="Dvd Player" parent="." index="0" unique_id=136075813]
+transform = Transform3D(0.2701972, 0, 0, 0, 0.049869977, 0, 0, 0, 0.32472286, 0.008598328, -0.046655178, -0.004892826)

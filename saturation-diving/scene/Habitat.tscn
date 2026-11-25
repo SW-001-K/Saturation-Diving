@@ -45,6 +45,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5496458, 0.40511048)
 [node name="AreaLight3D" parent="Diver/Camera3D" parent_id_path=PackedInt32Array(2127073738, 1859835930) index="0" unique_id=153991774]
 light_color = Color(0.9637365, 0.8589255, 0.6964204, 1)
 
+[node name="AudioListener3D" parent="Diver/Camera3D" parent_id_path=PackedInt32Array(2127073738, 1859835930) index="3" unique_id=2060687674]
+doppler_tracking = 2
+
 [node name="Node3D" parent="Diver/MeshInstance3D" parent_id_path=PackedInt32Array(2127073738, 1132363836) index="0" unique_id=940384163]
 visible = false
 
@@ -72,7 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7056384, 2.7738867, -3.908
 shape = SubResource("BoxShape3D_xigk5")
 
 [node name="Lamp" parent="." unique_id=893201531 instance=ExtResource("7_imvtb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3597064, 5.368915, -0.8139827)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0039459467, 5.368915, -0.8139827)
 
 [node name="Lamp down" type="SpotLight3D" parent="Lamp" unique_id=560580202]
 transform = Transform3D(1, 0, 0, 0, -0.015209132, 0.9998843, 0, -0.9998843, -0.015209132, 0, -1.2815161, 0)

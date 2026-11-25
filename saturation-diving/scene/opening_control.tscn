@@ -38,13 +38,14 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 302.0
-offset_top = 92.0
+offset_top = 138.0
 offset_right = -296.0
-offset_bottom = -253.0
+offset_bottom = -207.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.80084443, 0.14047828, 1)
 theme_override_fonts/font = ExtResource("2_d417a")
+theme_override_font_sizes/font_size = 32
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
@@ -52,12 +53,12 @@ autowrap_mode = 1
 
 [node name="Label2" type="Label" parent="Panel" unique_id=48002093]
 layout_mode = 0
-offset_left = 1045.0
-offset_top = 28.0
-offset_right = 1104.0
-offset_bottom = 51.0
+offset_left = 1773.0
+offset_top = 42.0
+offset_right = 1848.0
+offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("2_d417a")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 32
 text = "SKIP"
 
 [node name="Label3" type="Label" parent="Panel" unique_id=1609598019]
@@ -65,15 +66,15 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 741.0
-offset_top = 587.0
-offset_right = -317.00012
-offset_bottom = -39.0
+offset_left = 1470.0
+offset_top = 900.0
+offset_right = -320.0
+offset_bottom = -145.224
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0.8, 0.14117648, 1)
 theme_override_fonts/font = ExtResource("2_d417a")
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 32
 text = "WAKE UP"
 
 [node name="CameraShader" parent="Panel" unique_id=1195498313 instance=ExtResource("3_4tgjw")]
@@ -86,12 +87,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 1045.0
-offset_top = 28.0
-offset_right = -44.0
-offset_bottom = -600.0
+offset_left = 1773.0
+offset_top = 42.0
+offset_right = -74.0
+offset_bottom = -992.224
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 31
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8hoop")
 action_mode = 0
 
@@ -100,12 +102,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 734.0
-offset_top = 585.0
-offset_right = -311.00012
-offset_bottom = -34.0
+offset_left = 1476.0
+offset_top = 898.0
+offset_right = -313.0
+offset_bottom = -138.224
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_font_sizes/font_size = 23
 theme_override_styles/normal = SubResource("StyleBoxEmpty_8hoop")
 
 [node name="Elevator" parent="." unique_id=367942889 instance=ExtResource("4_d417a")]
